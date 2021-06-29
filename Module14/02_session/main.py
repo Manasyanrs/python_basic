@@ -9,22 +9,16 @@ coordinates_y_2 = float(input('Введите координати второй 
 difference_x = coordinates_x_1 - coordinates_x_2
 difference_y = coordinates_y_1 - coordinates_y_2
 total = 0
-result = coordinates_y_2 - total * coordinates_x_2
-if difference_x != 0:
-    division_y_x = difference_y / difference_x
-    total += division_y_x
-    print("Уравнение прямой, проходящей через эти точки:")
-    print("y = ", total, " * x + ", result)
-elif difference_x == 0 and difference_y == 0:
-    print("Разница двух координатов 0")
-else:
-    division_y_x = abs(difference_x / difference_y)
-    total += division_y_x
-    print("Уравнение прямой, проходящей через эти точки:")
-    print("y = ", total, " * x + ", result)
 
-# TODO нужно делать уонструкцию вида if elif else
-# TODO где в первых двух будем обработка если x_diff = 0 во втором y_diff = 0
-# TODO при входных данных 10 20 и 10 45 ответ x = 10.0
+if difference_x == 0:
+    print("x =", coordinates_x_1)
+elif difference_y == 0:
+    print("y =", coordinates_y_1)
+else:
+    total = abs(difference_x / difference_y)
+    result = coordinates_y_2 - total * coordinates_x_2
+    print("Уравнение прямой, проходящей через эти точки:")
+    print("y = ", total, "* x + ", result)
+
 
 
