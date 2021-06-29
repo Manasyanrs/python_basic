@@ -1,5 +1,5 @@
-first_year = 1900#int(input("Введите первый год: "))
-second_year = 2100#int(input("Введите второй год: "))
+first_year = int(input("Введите первый год: "))
+second_year = int(input("Введите второй год: "))
 numbers_2_years = ""
 sum_2_year = str(first_year) + str(second_year)
 
@@ -25,4 +25,3 @@ for element in numbers_2_years:
         else:
             count_element = 0
 
-# TODO применить рекомендации данные ранее, подчеркиваний быть не должно даже в комментариях
