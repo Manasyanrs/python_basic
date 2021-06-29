@@ -12,3 +12,5 @@ def metal_detector(coordinate_x, coordinate_y, radius):
         print("Монетки в области нет")
 
 metal_detector(x_coordinate, y_coordinate, radius)
+
+# TODO применить рекомендации данные ранее

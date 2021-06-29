@@ -24,3 +24,5 @@ for element in numbers_2_years:
                 count_element = 0
         else:
             count_element = 0
+
+# TODO применить рекомендации данные ранее, подчеркиваний быть не должно даже в комментариях

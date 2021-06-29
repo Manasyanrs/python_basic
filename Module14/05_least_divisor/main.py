@@ -14,3 +14,6 @@ def minimum_divisor(number):
 total = minimum_divisor(questions)
 
 print("Наименьший делитель, отличный от единицы:", total)
+
+
+# TODO применить рекомендации данные ранее
