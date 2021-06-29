@@ -1,6 +1,3 @@
-questions = int(input("Введите число: "))
-
-
 def minimum_divisor(number):
     results = 0
     for element in range(2, number + 1):
@@ -11,9 +8,8 @@ def minimum_divisor(number):
     return results
 
 
+questions = int(input("Введите число: "))
 total = minimum_divisor(questions)
 
 print("Наименьший делитель, отличный от единицы:", total)
 
-
-# TODO применить рекомендации данные ранее
