@@ -23,3 +23,5 @@ print("\nСумма цифр:", sum_digits)
 print("Кол-во цифр в числе:", count_digits)
 if total_digits == difference:
     print("Разность суммы и кол-ва цифр:", difference)
+
+# зачет!

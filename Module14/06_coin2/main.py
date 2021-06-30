@@ -13,3 +13,5 @@ y_coordinate = float(input("Y "))
 radius = float(input("Введите радиус: "))
 
 metal_detector(x_coordinate, y_coordinate, radius)
+
+# зачет!

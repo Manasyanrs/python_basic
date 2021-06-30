@@ -13,3 +13,4 @@ total = minimum_divisor(questions)
 
 print("Наименьший делитель, отличный от единицы:", total)
 
+# зачет!

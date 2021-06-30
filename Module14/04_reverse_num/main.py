@@ -25,3 +25,5 @@ total_sum_numbers = first_results + second_results
 print("\nПервое число наоборот:", first_results)
 print("Второе число наоборот:", second_results)
 print("Сумма:", total_sum_numbers)
+
+# зачет!
