@@ -9,5 +9,3 @@ for numbers in range(1, questions + 1):
 print("\nНеподходящие значения:", end=" ")
 for improper in improper_cell:
     print(improper, end=" ")
-
-
