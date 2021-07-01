@@ -3,6 +3,7 @@ names = ["Артемий", "Борис", "Влад", "Гоша", "Дима", "Е
 
 even_names = []
 
+# TODO попробуйте использовать enumerate
 for name_id in range(len(names)):
 
     if name_id % 2 == 1:
@@ -10,3 +11,5 @@ for name_id in range(len(names)):
 
 print("Список имен\n", names)
 print("\nКаждое второе имя из списка\n", even_names)
+
+

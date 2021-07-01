@@ -7,6 +7,7 @@ def count_unique_letters(word):
                 total += 1
         if total == 1:
             count_letters += total
+            # TODO не используется
             total = 0
 
     print("\nКол-во уникальных букв:", count_letters)
