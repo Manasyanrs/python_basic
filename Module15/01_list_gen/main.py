@@ -11,8 +11,8 @@ def odd_numbers(number):
 questions = int(input('Введите число: '))
 
 print("Список из нечетных чисел")
-# TODO старайтесь не вызывать функцию в принте
-print(odd_numbers(questions))
+odd_numbers = odd_numbers(questions)
+print(odd_numbers)
 
 
 
