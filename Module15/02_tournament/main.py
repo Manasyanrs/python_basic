@@ -3,11 +3,9 @@ names = ["Артемий", "Борис", "Влад", "Гоша", "Дима", "Е
 
 even_names = []
 
-# TODO попробуйте использовать enumerate
-for name_id in range(len(names)):
-
-    if name_id % 2 == 1:
-        even_names.append(names[name_id])
+for index, name in enumerate(names):
+    if index % 2 == 1:
+        even_names.append(name)
 
 print("Список имен\n", names)
 print("\nКаждое второе имя из списка\n", even_names)
