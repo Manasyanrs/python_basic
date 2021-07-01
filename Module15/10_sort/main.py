@@ -11,3 +11,5 @@ print("Отсортированный список:", initial)
 print()
 initial.sort()
 print("Отсортированный список:", initial)
+
+# зачет!

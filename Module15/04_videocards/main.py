@@ -14,3 +14,5 @@ for vga in old_vga:
 
 print("\nСтарый список видеокарт:", old_vga)
 print("Новый список видеокарт:", new_vga)
+
+# зачет!

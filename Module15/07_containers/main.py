@@ -17,3 +17,5 @@ for kg in range(len(line_containers)):
         place_containers += 1
 
 print("\nНомер, куда встанет новый контейнер:", place_containers)
+
+# зачет!

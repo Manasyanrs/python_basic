@@ -11,3 +11,5 @@ for _ in range(len(my_element)):
     else:
         new_element = my_element[shift - 1:] + my_element[:shift - 1]
 print("Сдвинутый список:", new_element)
+
+# зачет!

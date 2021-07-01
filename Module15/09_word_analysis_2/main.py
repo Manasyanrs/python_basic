@@ -14,3 +14,4 @@ if count_letters == len(word):
 else:
     print("Слово не является палиндромом")
 
+# зачет!

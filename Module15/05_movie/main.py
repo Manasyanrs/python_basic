@@ -15,3 +15,5 @@ for film in range(len(films)):
 print("Список любимых фильмов\n")
 for my_film in love_films:
     print(my_film)
+
+# зачет!
