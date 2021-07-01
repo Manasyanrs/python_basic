@@ -1,4 +1,3 @@
-
 questions = int(input("Кол-во клеток: "))
 improper_cell = []
 print()
@@ -7,8 +6,8 @@ for numbers in range(1, questions + 1):
     if numbers > new_questions:
         improper_cell.append(new_questions)
 
-print("\nНеподходящие значения:", end = " ")
+print("\nНеподходящие значения:", end=" ")
 for improper in improper_cell:
-    print(improper, end = " ")
+    print(improper, end=" ")
 
-# TODO есть недочеты по PEP8
+
