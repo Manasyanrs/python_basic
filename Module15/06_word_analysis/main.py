@@ -14,3 +14,5 @@ def count_unique_letters(word):
 questions = input("Введите слово: ")
 
 count_unique_letters(questions)
+
+# зачет!ё

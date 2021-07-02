@@ -10,4 +10,4 @@ for index, name in enumerate(names):
 print("Список имен\n", names)
 print("\nКаждое второе имя из списка\n", even_names)
 
-
+# зачет!

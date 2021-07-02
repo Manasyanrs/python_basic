@@ -14,5 +14,4 @@ print("Список из нечетных чисел")
 odd_numbers = odd_numbers(questions)
 print(odd_numbers)
 
-
-
+# зачет!
