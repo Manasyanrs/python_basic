@@ -5,6 +5,10 @@ shop = [['каретка', 1200], ['шатун', 1000], ['седло', 300],
 questions = input("Название детали: ")
 names_products = 0
 price_products = 0
+
+# TODO сразу в заголовке цикла распаковываем и получаем имя и цену товара из списка который придет когда мы будем
+#  итерироваться по главному списку.
+
 for products in shop:
     if products[0] == questions:
         names_products += 1
