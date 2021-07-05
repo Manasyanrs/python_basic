@@ -16,3 +16,5 @@ for count in range(1, peoples + 1):
         count_people += 1
 
 print("\nНаибольшее кол-во людей, которые могут взять ролики:", count_people)
+
+# зачет!

@@ -26,3 +26,5 @@ print("\nНужно приписать чисел:", length)
 print("Сами числа:", end=" ")
 for element in new_numbers:
     print(element, end=" ")
+
+# зачет!

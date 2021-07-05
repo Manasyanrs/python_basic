@@ -6,3 +6,5 @@ print("\nУченики класса 'б' по росту\n", students_b)
 students_a.extend(students_b)
 students_a.sort()
 print("\nПосле объединенные 2 класса\n", students_a)
+
+# зачет!
