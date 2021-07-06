@@ -11,3 +11,5 @@ count_numbers = first_number.count(3)
 print("Кол-во цифр 3 при втором объединении:", count_numbers)
 
 print("Итоговый список:", first_number)
+
+# зачет!

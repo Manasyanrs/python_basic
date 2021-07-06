@@ -21,3 +21,5 @@ while True:
         print()
         print("Остался человек под номером", count_peoples[0])
         break
+
+# зачет!

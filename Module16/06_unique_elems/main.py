@@ -25,3 +25,5 @@ for element in first:
             break
 
 print("Новый первый список с уникальными элементами:", first)
+
+# зачет!

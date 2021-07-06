@@ -14,6 +14,8 @@ questions = int(input("Сколько песен выбрать? "))
 total_time = 0
 for song in range(1, questions + 1):
     song_name = input("Название " + str(song) + " песни: ")
+    # TODO сразу в заголовке цикла распаковываем и получаем имя и время из списка который придет когда мы будем
+    #  итерироваться по главному списку.
     for name in violator_songs:
         if name[0] == song_name:
             total_time += name[1]

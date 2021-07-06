@@ -18,3 +18,5 @@ print("\nБаланс друзей:")
 for money in range(len(count_friends)):
     number_friends = money + 1
     print(number_friends, ":", count_friends[money])
+
+# зачет!
