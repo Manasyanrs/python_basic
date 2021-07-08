@@ -20,3 +20,5 @@ for song in range(1, questions + 1):
 
 total_time = round(total_time, 2)
 print("\nОбщее время звучания песен:", total_time, "минут")
+
+# зачет!

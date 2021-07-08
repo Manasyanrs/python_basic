@@ -16,3 +16,5 @@ if names_products == 0:
 else:
     print("Кол-во деталей -", names_products)
     print("Общая стоимость -", total_price_products)
+
+# зачет!
