@@ -16,3 +16,5 @@ for number in range(len(register)):
 
 register = register[:-count_zero]
 print("Список без нулей", register)
+
+# зачет!

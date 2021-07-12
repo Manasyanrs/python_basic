@@ -11,3 +11,5 @@ results = [(first[digit] if first[digit] > second[digit] else second[digit]) for
 print("Первая команда:", first)
 print("Вторая команда:", second)
 print("Победители тура:", results)
+
+# зачет!

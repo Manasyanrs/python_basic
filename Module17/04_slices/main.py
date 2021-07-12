@@ -21,3 +21,5 @@ print("7:", index_number_3)
 print("8:", last_three_elements)
 print("9:", index_number_3_4)
 print("10:", reverse_index_number_3_4)
+
+# зачет!

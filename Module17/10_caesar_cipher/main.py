@@ -12,3 +12,5 @@ for letters in text:
         results += " "
 
 print("Зашифрованное сообщение:", results)
+
+# зачет!
