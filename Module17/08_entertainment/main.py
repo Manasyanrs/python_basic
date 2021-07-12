@@ -24,3 +24,6 @@ for element in range(len(sticks_list)):
         results += "."
 
 print("\nРезультат:", results)
+
+# TODO нейминг переменных
+
