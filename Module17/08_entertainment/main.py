@@ -1,29 +1,26 @@
 import random
 
-number_sticks = int(input("Кол-во палок: "))
-number_throws = int(input("Кол-во бросков: "))
-sticks_list = list(range(1, number_sticks + 1))
+count_sticks = int(input("Количество палок: "))
+count_throws = int(input("Количество бросков: "))
+stick_number = list(range(1, count_sticks + 1))
 
-for i in range(1, number_throws + 1):
+for i in range(1, count_throws + 1):
     print("Бросок " + str(i) + ".", end=" ")
-    left = random.randint(2, number_sticks)
-    right = random.randint(left, number_sticks)
+    left = random.randint(2, count_sticks)
+    right = random.randint(left, count_sticks)
     print("Сбиты палки с номера", left, "\nпо номер", right)
     for digit in range(left, right + 1):
-        for number in range(len(sticks_list)):
+        for number in range(len(stick_number)):
             if digit - 1 == number:
-                sticks_list.insert(number, ".")
-                sticks_list.remove(sticks_list[digit])
+                stick_number.insert(number, ".")
+                stick_number.remove(stick_number[digit])
                 break
 
 results = ""
-for element in range(len(sticks_list)):
-    if sticks_list[element] != ".":
+for element in range(len(stick_number)):
+    if stick_number[element] != ".":
         results += "I"
     else:
         results += "."
 
 print("\nРезультат:", results)
-
-# TODO нейминг переменных
-
