@@ -4,6 +4,7 @@ count_sticks = int(input("Количество палок: "))
 count_throws = int(input("Количество бросков: "))
 stick_number = list(range(1, count_sticks + 1))
 
+# TODO за что у вас отвечает i
 for i in range(1, count_throws + 1):
     print("Бросок " + str(i) + ".", end=" ")
     left = random.randint(2, count_sticks)
