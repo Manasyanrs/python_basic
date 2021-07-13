@@ -18,3 +18,6 @@ else:
         maximum_h = text[count_h[index] + 1:count_h[index + 1]]
         print("Элементы между буквами 'h'", maximum_h)
         print("Текст в зеркальном виде", maximum_h[::-1])
+
+
+# зачет!
