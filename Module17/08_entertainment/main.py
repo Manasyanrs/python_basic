@@ -24,3 +24,5 @@ for element in range(len(stick_number)):
         results += "."
 
 print("\nРезультат:", results)
+
+# зачет!
