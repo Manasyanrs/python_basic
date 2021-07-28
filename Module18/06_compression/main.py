@@ -17,3 +17,5 @@ for element in range(len(string)):
 results = new_string + string[-1] + str(count_letters)
 
 print("Закодированная строка:", results)
+
+# зачет!

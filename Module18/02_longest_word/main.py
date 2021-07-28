@@ -8,3 +8,5 @@ for element in text:
         word = element
 
 print("\nСамое длинное слово в тексте", word, "\nколичество букв в слове", word, "=", length_word)
+
+# зачет!

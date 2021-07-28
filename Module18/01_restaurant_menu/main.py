@@ -7,3 +7,5 @@ for name in named_dishes:
     else:
         new_name += ", "
 print("\nНа данный момент в меню есть:", new_name)
+
+# зачет!

@@ -28,3 +28,5 @@ for words in text:
                     count_element = 0
 
 print("Новое сообщение:", results)
+
+# зачет!

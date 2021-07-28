@@ -24,3 +24,5 @@ for digit in new_ip:
 
 if count_true_iterations == 4:
     print("IP-адрес корректен")
+
+# зачет!
