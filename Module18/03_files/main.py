@@ -9,3 +9,5 @@ elif name_file[0] in symbols:
 
 else:
     print("Файл назван верно.")
+
+# зачет!
