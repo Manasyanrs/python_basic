@@ -24,4 +24,18 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+for name in goods:
+    if goods[name] in store:
+        quantity = 0
+        price_quantity = 0
+        price = 0
+        for store_list in store[goods[name]]:
+            for element in store_list:
+                quantity += int(store_list['quantity'])
+                price_quantity += int(store_list['price'])
+                price += int(int(store_list['quantity']) * int(store_list['price']))
+
+        total_quantity = int(quantity/2)
+        total_price = int(price/2)
+
+        print(name + " -", total_quantity, "шт, стоимость", total_price, "руб")
