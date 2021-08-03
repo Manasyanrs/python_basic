@@ -40,4 +40,16 @@ else:
     else:
         print("Нельзя сделать палиндромом")
 
+# aaddc  не работает
 # зачет!
+
+# aaddc работает сделлано по разбору дз
+my_word = input("Введите строку: ").lower()
+count = 0
+for word_letters in my_word:
+    if my_word.count(word_letters) % 2 != 0:
+        count += 1
+if count <= 1:
+    print("Можно сделать палиндромом")
+else:
+    print("Нельзя сделать палиндромом")

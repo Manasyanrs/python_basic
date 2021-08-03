@@ -23,21 +23,18 @@ store = {
         {'quantity': 43, 'price': 97},
     ],
 }
-# TODO используем .items() у словаря и получаем сразу в заголовке цикла имя и код товара
-#  должно быть всего два цикла
-# TODO слова list в именовании переменной быть не должно
-for name in goods:
-    if goods[name] in store:
-        quantity = 0
-        price_quantity = 0
-        price = 0
-        for store_list in store[goods[name]]:
-            for element in store_list:
-                quantity += int(store_list['quantity'])
-                price_quantity += int(store_list['price'])
-                price += int(int(store_list['quantity']) * int(store_list['price']))
 
-        total_quantity = int(quantity/2)
-        total_price = int(price/2)
-
-        print(name + " -", total_quantity, "шт, стоимость", total_price, "руб")
+for name, product_code in goods.items():
+    if product_code in store:
+        total_quantity = 0
+        total_price = 0
+        for count in store[product_code]:
+            total_quantity += count["quantity"]
+            total_price += count["quantity"] * count["price"]
+        print("{name_product} - {quantity} шт, стоимость {price_product} руб".format(
+            name_product=name,
+            quantity=total_quantity,
+            price_product=total_price
+        ))
+    else:
+        print("{} продукт с таким кодом не найден".format(product_code))

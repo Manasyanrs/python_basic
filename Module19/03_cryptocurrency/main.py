@@ -48,20 +48,19 @@ for keys, values in data.items():
     print(keys, ":", values)
 
 data["ETH"]["total_diff"] = 100
+print("\nЗначение total_diff в ETH после замены = {}".format(data["ETH"]["total_diff"]))
 
 new_data = {}
 for element in data["tokens"]:
     new_data.update(element)
 
 data["tokens"] = new_data
+
 data["tokens"]["fst_token_info"]["name"] = "doge"
+print("\nЗначение name в tokens после замены = {}".format(data["tokens"]["fst_token_info"]["name"]))
 
 data["ETH"]["total_out"] = data["tokens"].pop("total_out")
+print("\nЗначение total_out в ETH после замены = {}".format(data["ETH"]["total_out"]))
 
 data["tokens"]["fst_token_info"]["total_price"] = data["tokens"]["fst_token_info"].pop("price")
-
-
-# TODO можно воспользоваться что бы вывести все красиво с форматированием
-# TODO первое это pprint
-# TODO второе это json.dumps(data, intent=4)
-
+print("\nПосле замены лкюча total_price в tokens = {}".format(data["tokens"]["fst_token_info"]["total_price"]))
