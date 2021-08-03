@@ -59,3 +59,9 @@ data["tokens"]["fst_token_info"]["name"] = "doge"
 data["ETH"]["total_out"] = data["tokens"].pop("total_out")
 
 data["tokens"]["fst_token_info"]["total_price"] = data["tokens"]["fst_token_info"].pop("price")
+
+
+# TODO можно воспользоваться что бы вывести все красиво с форматированием
+# TODO первое это pprint
+# TODO второе это json.dumps(data, intent=4)
+

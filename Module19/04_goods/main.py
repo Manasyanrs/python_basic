@@ -23,7 +23,9 @@ store = {
         {'quantity': 43, 'price': 97},
     ],
 }
-
+# TODO используем .items() у словаря и получаем сразу в заголовке цикла имя и код товара
+#  должно быть всего два цикла
+# TODO слова list в именовании переменной быть не должно
 for name in goods:
     if goods[name] in store:
         quantity = 0
