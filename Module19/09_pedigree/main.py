@@ -28,3 +28,5 @@ for p_name in persons_names:
 print("\n“Высота” каждого члена семьи:")
 for element in sorted(results):
     print(element, results[element])
+
+# зачет!

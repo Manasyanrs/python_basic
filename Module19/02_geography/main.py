@@ -22,3 +22,5 @@ for number in range(1, 4):
         print("Город {0} расположен в стране {1}.".format(cities, country))
     else:
         print("По городу {} данных нет.".format(cities))
+
+# зачет!

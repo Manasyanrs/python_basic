@@ -29,3 +29,5 @@ while True:
     else:
         print("Артём мог загадать следующие числа:", numbers_in_maximum_number)
         break
+
+# зачет!

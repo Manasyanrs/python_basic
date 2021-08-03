@@ -31,3 +31,5 @@ results = results_dictionary(text_dictionary)
 print("\nИнвертированный словарь частот:")
 for element in results:
     print(element, ":", results[element])
+
+# зачет!

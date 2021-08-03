@@ -18,3 +18,5 @@ for _ in range(2):
             break
     if count == 0:
         print("Такого слова в словаре нет.")
+
+# зачет!

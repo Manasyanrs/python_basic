@@ -17,3 +17,5 @@ for number in range(1, count_songs + 1):
     time += violator_songs.get(songs_name, 0)
 
 print("Общее время звучания песен: {:.2f} минут".format(time))
+
+# зачет!

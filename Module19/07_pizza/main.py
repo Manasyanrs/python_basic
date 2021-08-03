@@ -26,3 +26,5 @@ for surname in clients_database:
     print(surname + ":")
     for pizzas in clients_database[surname]:
         print("     " + pizzas + ": " + clients_database[surname][pizzas])
+
+# зачет!
