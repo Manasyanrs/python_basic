@@ -44,5 +44,18 @@ data = {
     ]
 }
 
+for keys, values in data.items():
+    print(keys, ":", values)
 
-# TODO здесь писать код
+data["ETH"]["total_diff"] = 100
+
+new_data = {}
+for element in data["tokens"]:
+    new_data.update(element)
+
+data["tokens"] = new_data
+data["tokens"]["fst_token_info"]["name"] = "doge"
+
+data["ETH"]["total_out"] = data["tokens"].pop("total_out")
+
+data["tokens"]["fst_token_info"]["total_price"] = data["tokens"]["fst_token_info"].pop("price")
