@@ -64,3 +64,5 @@ print("\nЗначение total_out в ETH после замены = {}".format(
 
 data["tokens"]["fst_token_info"]["total_price"] = data["tokens"]["fst_token_info"].pop("price")
 print("\nПосле замены лкюча total_price в tokens = {}".format(data["tokens"]["fst_token_info"]["total_price"]))
+
+# зачет!
