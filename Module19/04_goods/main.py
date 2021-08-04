@@ -25,6 +25,7 @@ store = {
 }
 
 for name, product_code in goods.items():
+    # TODO без условия и этой вложенности
     if product_code in store:
         total_quantity = 0
         total_price = 0
