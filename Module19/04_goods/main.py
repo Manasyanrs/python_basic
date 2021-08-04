@@ -25,17 +25,13 @@ store = {
 }
 
 for name, product_code in goods.items():
-    # TODO без условия и этой вложенности
-    if product_code in store:
-        total_quantity = 0
-        total_price = 0
-        for count in store[product_code]:
-            total_quantity += count["quantity"]
-            total_price += count["quantity"] * count["price"]
-        print("{name_product} - {quantity} шт, стоимость {price_product} руб".format(
-            name_product=name,
-            quantity=total_quantity,
-            price_product=total_price
-        ))
-    else:
-        print("{} продукт с таким кодом не найден".format(product_code))
+    product_count = 0
+    product_cost = 0
+    for element in store[product_code]:
+        product_count += element["quantity"]
+        product_cost += element["price"] * element["quantity"]
+    print("{name_product} - {quantity} шт, стоимость {price_product} руб".format(
+        name_product=name,
+        quantity=product_count,
+        price_product=product_cost
+    ))
