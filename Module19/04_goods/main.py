@@ -35,3 +35,5 @@ for name, product_code in goods.items():
         quantity=product_count,
         price_product=product_cost
     ))
+
+# зачет!
