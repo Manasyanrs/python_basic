@@ -1,3 +1,13 @@
+def interests_students(dictionary_type):
+    students_hobby = []
+    students_surname = 0
+    for outside_interest in dictionary_type.values():
+
+        students_hobby += outside_interest["interests"]
+        students_surname += len(outside_interest["surname"])
+    return students_hobby, students_surname
+
+
 students = {
     1: {
         'name': 'Bob',
@@ -19,26 +29,21 @@ students = {
     }
 }
 
+for id_student, age_student in students.items():
+    print("Id студента = {id}, возраст = {student_age}".format(
+        id=id_student,
+        student_age=age_student["age"]
+    ))
+hobby, length_all_students_surname = interests_students(students)
+print("\nИнтересы всех студентов: \n{interests} \nОбщая длину фамилий всех студентов\n{length}".format(
+    interests=hobby,
+    length=length_all_students_surname
+))
 
-def f(dict):
-    lst = []
-    string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
-    cnt = 0
-    for s in string:
-        cnt += 1
-    return lst, cnt
+print()
 
+students_interests = hobby
+students_surname_length = length_all_students_surname
 
-pairs = []
-for i in students:
-    pairs += (i, students[i]['age'])
-
-
-my_lst = f(students)[0]
-l = f(students)[1]
-print(my_lst, l)
-
-# TODO исправить код
+print(students_interests)
+print(students_surname_length)
