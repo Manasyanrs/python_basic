@@ -31,10 +31,7 @@ result = dict()
 
 for index, name_family in families.items():
     result[index] = {}
-    # TODO проработать нейминг переменных ниже
-    c = result[index]
     for name in name_family.keys():
-        a = name
         surname = name.split()
         if surname_question == surname[0].lower() or surname_question + "а" == surname[0].lower():
             id_family.add(index)
