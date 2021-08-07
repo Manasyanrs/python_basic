@@ -18,3 +18,5 @@ total_numbers = (1, 8, 5, 4, 9, 25, 6.5)
 
 result = find_dotted_number(total_numbers)
 print(result)
+
+# зачет!

@@ -13,3 +13,6 @@ print(result)
 
 for items in result:
     print(items)
+
+# зачет!
+

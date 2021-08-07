@@ -26,3 +26,5 @@ test = (25, 1, 2, 5, 3, 4, 5, 6, 15, 7, 5, 11)
 search_number = int(input("Введите число для пойска в кортеже: "))
 
 print(find_digit(test, search_number))
+
+# зачет!

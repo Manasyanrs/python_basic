@@ -54,3 +54,5 @@ for digit in id_family:
             print(number)
             for name_surname, age in name_value.items():
                 print(name_surname, age)
+
+# зачет!
