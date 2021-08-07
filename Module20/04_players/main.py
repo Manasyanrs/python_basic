@@ -10,3 +10,5 @@ for name, player_points in players.items():
     result.append(total)
 
 print(result)
+
+# зачет!

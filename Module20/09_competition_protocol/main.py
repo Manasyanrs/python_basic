@@ -34,3 +34,5 @@ for number_participants in range(1, 4):
         name_participants=name_gamer[number_participants - 1],
         point_participants=point_gamer[number_participants - 1]
     ))
+
+# зачет!

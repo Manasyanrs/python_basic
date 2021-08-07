@@ -33,3 +33,5 @@ even_1 = list(range(0, 10, 2))
 odd_1 = list(range(1, 11, 2))
 result_4 = list(zip(even_1, odd_1))
 print(result_4)
+
+# зачет!

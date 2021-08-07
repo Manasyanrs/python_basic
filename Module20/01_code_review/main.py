@@ -47,3 +47,5 @@ students_surname_length = length_all_students_surname
 
 print(students_interests)
 print(students_surname_length)
+
+# зачет!

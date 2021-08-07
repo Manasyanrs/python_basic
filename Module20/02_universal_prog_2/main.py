@@ -28,3 +28,5 @@ print("test_1\n", prime_indices(test_1))
 print("\ntest_2\n", prime_indices(test_2))
 print("\ntest_3\n", prime_indices(test_3))
 print("\ntest_4\n", prime_indices(test_4))
+
+# зачет!

@@ -27,3 +27,5 @@ while True:
     else:
         if questions == "0":
             break
+
+# зачет!
