@@ -1,10 +1,6 @@
 word = "abcd"
 numbers = (10, 20, 30, 40)
 
-# TODO тут нам нужно написать свой вариант функции zip
-result = zip(word, numbers)
-print(result)
-
 new_variable = ()
 
 if len(word) <= len(numbers):
@@ -12,5 +8,8 @@ if len(word) <= len(numbers):
 else:
     new_variable = word[:len(numbers)]
 
-for index, element in enumerate(new_variable):
-    print((element, numbers[index]))
+result = ((element, numbers[index]) for index, element in enumerate(new_variable))
+print(result)
+
+for items in result:
+    print(items)

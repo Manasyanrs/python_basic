@@ -1,23 +1,20 @@
-
-# TODO применить рекомендации данные ранее
-# TODO типы в именовании функций и переменных не указываем
-def float_in_tuple(tuple_file):
-    new_tuple = sorted(tuple_file)
-    count_float = 0
-    for digit in new_tuple:
+def find_dotted_number(file):
+    new_file = sorted(file)
+    count_dotted_number = 0
+    for digit in new_file:
         if type(digit) == float:
-            count_float += 1
+            count_dotted_number += 1
             break
 
-    if count_float == 0:
+    if count_dotted_number == 0:
         print("В кортеже нету числа с точкой")
-        return new_tuple
+        return new_file
     else:
         print("В кортеже есть число с точкой")
-        return tuple_file
+        return file
 
 
 total_numbers = (1, 8, 5, 4, 9, 25, 6.5)
 
-result = float_in_tuple(total_numbers)
+result = find_dotted_number(total_numbers)
 print(result)
