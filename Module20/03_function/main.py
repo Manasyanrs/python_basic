@@ -1,3 +1,6 @@
+
+# TODO не в функции не в параметре не указываем tuple
+# TODO функцию функцией не называем дать ей более говорящее имя
 def tuple_function(tuple_variable, number):
     if number not in tuple_variable:
         print("\nВ кортеже нету числа", number)

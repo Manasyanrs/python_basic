@@ -31,6 +31,7 @@ result = dict()
 
 for index, name_family in families.items():
     result[index] = {}
+    # TODO проработать нейминг переменных ниже
     c = result[index]
     for name in name_family.keys():
         a = name

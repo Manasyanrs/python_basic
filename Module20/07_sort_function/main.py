@@ -1,3 +1,6 @@
+
+# TODO применить рекомендации данные ранее
+# TODO типы в именовании функций и переменных не указываем
 def float_in_tuple(tuple_file):
     new_tuple = sorted(tuple_file)
     count_float = 0

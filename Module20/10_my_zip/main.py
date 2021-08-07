@@ -1,6 +1,7 @@
 word = "abcd"
 numbers = (10, 20, 30, 40)
 
+# TODO тут нам нужно написать свой вариант функции zip
 result = zip(word, numbers)
 print(result)
 
