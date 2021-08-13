@@ -9,13 +9,12 @@ def fibonacci_digits(number_id):
 
 # part 2
 def fibonacci_digits_1(number_id):
-    if number_id == 0:
-        return 0
-    elif number_id == 1:
+    if number_id == 1 or number_id == 2:
         return 1
+    elif number_id == 0:
+        return 0
     else:
-        id_digit = fibonacci_digits(number_id - 1) + fibonacci_digits(number_id - 2)
-        return id_digit
+        return fibonacci_digits_1(number_id - 1) + fibonacci_digits_1(number_id - 2)
 
 
 # part 1
@@ -27,10 +26,3 @@ print("\nЧисло:", result)
 print()
 result = fibonacci_digits_1(question)
 print("Число:", result)
-
-# TODO фибоначи решается очень просто
-# TODO функция на вход принимает число
-# TODO если число 1 или 2 то вернем 1
-# TODO формула фибоначи(число - 1) + фибоначи(чилос -2)
-# TODO как вторая функция у вас но вызывает она сама себя
-
