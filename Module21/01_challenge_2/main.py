@@ -1,3 +1,5 @@
+
+# TODO огромная вложенность можно сократить до 3х строк
 def digits_1_to_n(number):
     if number == 2:
         return 1

@@ -24,3 +24,6 @@ if number % 2 == 0:
     move(number, 1, 3)
 else:
     move(number, 1, 2)
+
+# TODO правим для начала нейминг
+

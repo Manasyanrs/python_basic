@@ -1,3 +1,5 @@
+
+# TODO не пишем что это функция и так понятно
 def calculating_math_func(data):
     result = 1
     if data in factorials.keys():

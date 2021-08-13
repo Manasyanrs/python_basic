@@ -29,3 +29,6 @@ name = input("Введите название продукта для новог
 print("Сайт для {}:".format(name))
 result = total(site, name, count)
 print(result)
+
+
+# TODO поправить нейминг

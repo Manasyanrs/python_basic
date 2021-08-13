@@ -1,9 +1,12 @@
+
+# TODO очень большая вложенность нужно сокращать
 def search_key(file, key, search_depth):
     if search_depth != 0:
         if key in file:
             return file[key]
         else:
             for element in file.values():
+                # TODO используем isinstance
                 if type(element) == dict:
                     result = search_key(element, key, search_depth - 1)
                     if result is not None:
