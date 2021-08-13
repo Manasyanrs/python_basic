@@ -17,3 +17,5 @@ print(test_1)
 print()
 test_2 = advanced_sum(1, 2, 3, 4, 5, (1, 4))
 print(test_2)
+
+# зачет!
