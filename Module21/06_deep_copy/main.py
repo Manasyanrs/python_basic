@@ -1,15 +1,14 @@
-def total(file, product_name, count_size):
-    for _ in range(count_size):
-        for k, v in file.items():
-            if k == "title":
-                file[k] = "Куплю/продам {} недорого".format(product_name)
-            elif k == "h2":
-                file[k] = "У нас самая низкая цена на {}".format(product_name)
-            else:
-                if isinstance(v, dict):
-                    total(v, product_name, count_size)
+def total(file, product_name):
+    for key, value in file.items():
+        if key == "title":
+            file[key] = "Куплю/продам {} недорого".format(product_name)
+        elif key == "h2":
+            file[key] = "У нас самая низкая цена на {}".format(product_name)
+        else:
+            if isinstance(value, dict):
+                total(value, product_name)
 
-        return file
+    return file
 
 
 site = {
@@ -25,10 +24,8 @@ site = {
     }
 }
 count = int(input("Сколько сайтов: "))
-name = input("Введите название продукта для нового сайта: ")
-print("Сайт для {}:".format(name))
-result = total(site, name, count)
-print(result)
-
-
-# TODO поправить нейминг
+for _ in range(count):
+    name = input("Введите название продукта для нового сайта: ")
+    print("Сайт для {}:".format(name))
+    result = total(site, name)
+    print(result)

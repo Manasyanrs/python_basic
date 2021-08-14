@@ -1,29 +1,26 @@
-def move(n, x, y):
-    if n % 2 == 0:
-        if n > 0:
-            move(n - 1, x, y-1)
+def move(number, rod_x, rod_y):
+    if number % 2 == 0:
+        if number > 0:
+            move(number - 1, rod_x, rod_y-1)
             print("Переложить диск {disc} со стержня номер {rod_2} на стержень номер {rod_3}".format(
-                disc=n,
-                rod_2=x,
-                rod_3=y
+                disc=number,
+                rod_2=rod_x,
+                rod_3=rod_y
             ))
-            move(n - 1, y - 1, y)
+            move(number - 1, rod_y - 1, rod_y)
     else:
-        if n > 0:
-            move(n - 1, x, y + 1)
+        if number > 0:
+            move(number - 1, rod_x, rod_y + 1)
             print("Переложить диск {disc} со стержня номер {rod_2} на стержень номер {rod_3}".format(
-                disc=n,
-                rod_2=x,
-                rod_3=y
+                disc=number,
+                rod_2=rod_x,
+                rod_3=rod_y
             ))
-            move(n - 1, y - 1, y)
+            move(number - 1, rod_y - 1, rod_y)
 
 
-number = int(input("Введите количество дисков: "))
-if number % 2 == 0:
-    move(number, 1, 3)
+count_disks = int(input("Введите количество дисков: "))
+if count_disks % 2 == 0:
+    move(count_disks, 1, 3)
 else:
-    move(number, 1, 2)
-
-# TODO правим для начала нейминг
-
+    move(count_disks, 1, 2)

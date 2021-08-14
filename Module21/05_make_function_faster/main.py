@@ -1,6 +1,4 @@
-
-# TODO не пишем что это функция и так понятно
-def calculating_math_func(data):
+def calculating(data):
     result = 1
     if data in factorials.keys():
         result = factorials[data]
@@ -16,9 +14,9 @@ def calculating_math_func(data):
 
 factorials = dict()
 
-test_1 = calculating_math_func(5)
+test_1 = calculating(5)
 print(test_1)
-test_2 = calculating_math_func(10)
+test_2 = calculating(10)
 print(test_2)
-test_3 = calculating_math_func(5)
+test_3 = calculating(5)
 print(test_3)
