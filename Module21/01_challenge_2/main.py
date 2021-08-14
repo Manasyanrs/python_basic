@@ -11,3 +11,5 @@ def digits_1_to_n(number):
 question = int(input("Введите число: "))
 result = digits_1_to_n(question)
 print(result)
+
+# зачет!

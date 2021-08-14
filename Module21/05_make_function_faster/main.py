@@ -20,3 +20,5 @@ test_2 = calculating(10)
 print(test_2)
 test_3 = calculating(5)
 print(test_3)
+
+# зачет!

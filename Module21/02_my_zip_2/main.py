@@ -26,3 +26,5 @@ total_result = analog_zip(test_letters, test_digit, test_dict)
 print(total_result)
 for total_element in total_result:
     print(total_element)
+
+# зачет!

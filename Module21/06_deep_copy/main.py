@@ -29,3 +29,6 @@ for _ in range(count):
     print("Сайт для {}:".format(name))
     result = total(site, name)
     print(result)
+
+
+# зачет!

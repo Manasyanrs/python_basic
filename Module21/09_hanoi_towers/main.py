@@ -24,3 +24,5 @@ if count_disks % 2 == 0:
     move(count_disks, 1, 3)
 else:
     move(count_disks, 1, 2)
+
+# зачет!

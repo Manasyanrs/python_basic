@@ -34,3 +34,5 @@ if find:
     print(find)
 else:
     print("В глубине {} нету токого ключа".format(depth))
+
+# зачет!

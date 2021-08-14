@@ -26,3 +26,5 @@ print("\nЧисло:", result)
 print()
 result = fibonacci_digits_1(question)
 print("Число:", result)
+
+# зачет!
