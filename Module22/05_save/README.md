@@ -14,8 +14,6 @@ Users Roman PycharmProjects Skillbox Module22
 Введите имя файла: my_document
 Файл успешно сохранён!
 ````
-_Содержимое файла:_
-testiruyem
 
 
 #### Пример 2:
@@ -29,5 +27,3 @@ Users Roman PycharmProjects Skillbox Module22
 Вы действительно хотите перезаписать файл? да
 Файл успешно перезаписан!
 ````
-_Содержимое файла:_
-programm test
