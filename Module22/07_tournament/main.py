@@ -1,3 +1,4 @@
+# TODO странная запись
 player_points = sorted([])
 first_text = open("first_tour.txt", "r")
 print("Содержимое файла", first_text.name)

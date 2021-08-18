@@ -32,6 +32,7 @@ russian_alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬ
 english = dict()
 russian = dict()
 
+# TODO назвать более развернуто
 a = open("voyna-i-mir.txt", "r", encoding="utf-8")
 
 for letters in a.read():
@@ -55,3 +56,5 @@ english_file = count_and_letters(english)
 
 print(sort_file(russian_file))
 print(sort_file(english_file))
+
+# TODO результат вывести таблицей, посчитать общее количество
