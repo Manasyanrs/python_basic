@@ -35,3 +35,5 @@ total_result = open("analysis.txt", "r")
 print("\nСодержимое файла", total_result.name)
 print(total_result.read())
 total_result.close()
+
+# зачет!

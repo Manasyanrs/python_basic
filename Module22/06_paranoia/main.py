@@ -27,3 +27,5 @@ new_file = open("cipher_text.txt", "r")
 print("\nСодержимое файла cipher", new_file.name)
 print(new_file.read(), end="")
 new_file.close()
+
+# зачет!

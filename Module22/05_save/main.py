@@ -36,3 +36,5 @@ else:
         rewrite.close()
     else:
         print("Это Ваш Выбор)):")
+
+# зачет!

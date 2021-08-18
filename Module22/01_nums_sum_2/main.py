@@ -17,3 +17,5 @@ information_new_text = new_text.read()
 
 print("Содержимое файла {} \n{}".format(new_text.name, information_new_text))
 new_text.close()
+
+# зачет!
