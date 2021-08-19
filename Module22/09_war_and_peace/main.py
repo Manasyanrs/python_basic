@@ -2,59 +2,43 @@ import os
 import zipfile
 
 
-def count_and_letters(file):
-    result = {}
-    for element, count in file.items():
-        if count not in result:
-            result[count] = []
-            result[count].append(element)
-        else:
-            result[count].append(element)
+def unzip():
+    path = os.path.abspath(os.path.join(""))
+    files = zipfile.ZipFile("voyna-i-mir.zip", "r")
+    files.extractall(path)
+    files.close()
 
+
+def calculator_letters():
+    result = dict()
+    text = open("voyna-i-mir.txt", "r", encoding="utf-8")
+    for element in text.read():
+        if element.isalpha():
+            if element not in result:
+                result[element] = 1
+            else:
+                result[element] += 1
+    text.close()
     return result
 
 
-def sort_file(argument):
-    result = []
-    for item in sorted(argument.keys()):
-        result += item, argument[item]
-    return result
+def sort_file(file):
+    numbers = sorted(file.values())
+    outcome = dict()
+    for digit in numbers:
+        for letter, count in file.items():
+            if count == digit:
+                outcome[letter] = count
+    return outcome
 
 
-path = os.path.abspath(os.path.join(""))
-files = zipfile.ZipFile("voyna-i-mir.zip", "r")
-files.extractall(path)
-files.close()
+def total_result(file):
+    print("|{} | {}".format("Буква", "количество"))
+    for letter, count in file.items():
+        print("|{}     | {}".format(letter, count))
 
-english_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-russian_alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 
-english = dict()
-russian = dict()
-
-# TODO назвать более развернуто
-a = open("voyna-i-mir.txt", "r", encoding="utf-8")
-
-for letters in a.read():
-    if letters in english_alphabet:
-        if letters not in english:
-            english[letters] = 1
-        else:
-            english[letters] += 1
-    elif letters in russian_alphabet:
-        if letters not in russian:
-            russian[letters] = 1
-        else:
-            russian[letters] += 1
-    else:
-        pass
-
-a.close()
-
-russian_file = count_and_letters(russian)
-english_file = count_and_letters(english)
-
-print(sort_file(russian_file))
-print(sort_file(english_file))
-
-# TODO результат вывести таблицей, посчитать общее количество
+unzip()
+information = calculator_letters()
+sort_result = sort_file(information)
+total_result(sort_result)

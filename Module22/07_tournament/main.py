@@ -1,31 +1,31 @@
-# TODO странная запись
-player_points = sorted([])
+winners = []
+
 first_text = open("first_tour.txt", "r")
-print("Содержимое файла", first_text.name)
-number = 0
-new_file = []
+print("Содержимое файла {}".format(first_text.name))
 for element in first_text.readlines():
     print(element, end="")
-    information = element.split()
-    if len(information) == 1:
-        number = int(information[0])
-    elif int(information[2]) > number:
-        player_points.append(int(information[2]))
-        new_file.append(information)
-
-player_tournament = ""
-for index, point in enumerate(reversed(player_points)):
-    for digit in new_file:
-        if str(point) in digit:
-            player_tournament += str(index + 1) + ") " + digit[1][0] + " " + digit[0] + " " + digit[2] + "\n"
+    element = element.split()
+    if len(element) > 1 and int(element[2]) > 80:
+        winners.append(element)
 first_text.close()
 
+player_points = []
+for information in winners:
+    player_points.append("{} {} {}".format(information[1][0], information[0], information[2]))
+
+player_points = (sorted(player_points, reverse=True))
+count_players = len(player_points)
+
 second_text = open("second_tour.txt", "w")
-number_participant = 0
-second_text.write(str(len(new_file)) + "\n")
-second_text.write(player_tournament)
+second_text.write(str(count_players) + "\n")
+number = 0
+for info in player_points:
+    number += 1
+    second_text.write("{}) {}\n".format(number, info))
 second_text.close()
+
 print()
+
 info_second_text = open("second_tour.txt", "r")
 print("\nСодержимое файла", info_second_text.name)
 print(info_second_text.read())
