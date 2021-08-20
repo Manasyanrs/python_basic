@@ -42,3 +42,5 @@ unzip()
 information = calculator_letters()
 sort_result = sort_file(information)
 total_result(sort_result)
+
+# зачет!

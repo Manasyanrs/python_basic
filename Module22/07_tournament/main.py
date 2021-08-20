@@ -30,3 +30,5 @@ info_second_text = open("second_tour.txt", "r")
 print("\nСодержимое файла", info_second_text.name)
 print(info_second_text.read())
 info_second_text.close()
+
+# зачет!
