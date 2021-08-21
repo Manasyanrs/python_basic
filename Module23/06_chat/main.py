@@ -1,1 +1,31 @@
-# TODO здесь писать код
+name = input("Введите имя: ")
+print("1. Посмотреть текущий текст чата")
+print("2. Отправить сообщение  (затем вводит сообщение)")
+
+while True:
+    questions = input("Ведите действе 1 или 2: ")
+    if questions == "1" or int(questions) == 1:
+        try:
+            with open("message.txt") as text:
+                result = text.read()
+                if len(result.split()) == 0:
+                    raise Warning
+                else:
+                    print(result)
+        except (Warning, FileNotFoundError):
+            print("Чат пустой")
+
+    if questions == "2" or int(questions) == 2:
+        while True:
+            write_massage = input("Введите сообщение: ")
+            with open("message.txt", "a") as text:
+                text.write("{} \n".format(write_massage))
+
+            try:
+                with open("message.txt") as text:
+                    line = text.readlines()
+                for index in range(len(line) - 5, len(line)):
+                    print(line[index], end="")
+            except IndexError:
+                with open("message.txt") as text:
+                    print(text.read())
