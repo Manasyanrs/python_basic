@@ -22,8 +22,10 @@ def is_true_protocols(file):
 
 with open("registrations.txt", "r", encoding="utf-8") as registration_protocols:
     for protocol in registration_protocols.readlines():
+        # TODO блок try except перенести сюда
         result = is_true_protocols(protocol.split())
         if result:
+            # TODO код на запись повторяется его нужно вынести в общею функцию записи
             with open("registrations_good.log", "a", encoding="utf-8") as good_log:
                 good_log.write(str(protocol))
         else:

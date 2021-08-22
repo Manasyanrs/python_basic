@@ -22,6 +22,7 @@ while True:
                 text.write("{} \n".format(write_massage))
 
             try:
+                # TODO повторяющийся блок кода
                 with open("message.txt") as text:
                     line = text.readlines()
                 for index in range(len(line) - 5, len(line)):
@@ -29,3 +30,5 @@ while True:
             except IndexError:
                 with open("message.txt") as text:
                     print(text.read())
+
+
