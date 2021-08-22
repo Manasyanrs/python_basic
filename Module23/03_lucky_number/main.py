@@ -15,3 +15,5 @@ while True:
         print("Введите целое число.")
     except Warning:
         raise Warning("Программа выбрасывала с вероятностью 1 к 13")
+
+# зачет!
