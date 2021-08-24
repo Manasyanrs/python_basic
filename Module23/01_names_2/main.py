@@ -21,5 +21,3 @@ try:
         letter_count(result)
 except FileNotFoundError:
     print("Файла с таким названием не сушествует")
-
-# зачет!

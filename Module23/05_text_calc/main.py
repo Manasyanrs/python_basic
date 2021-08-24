@@ -22,5 +22,3 @@ try:
             calculate(information.split())
 except FileNotFoundError:
     print("Файл не найден")
-
-# зачет!

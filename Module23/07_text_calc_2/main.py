@@ -28,12 +28,11 @@ def calculate(info):
     return result
 
 
-with open("message.txt") as calculate_line:
+with open("message.txt", "r") as calculate_line:
     print("Содержимое файла {}\n{}".format(calculate_line.name, calculate_line.read()))
 
 total_result = 0
-# TODO что вы тут делаете укажите атрибуты на запись или чтение по возможности указывайте encoding
-with open("message.txt") as calculate_line:
+with open("message.txt", "r") as calculate_line:
     for information in calculate_line.readlines():
         total_result += calculate(information.split())
 
