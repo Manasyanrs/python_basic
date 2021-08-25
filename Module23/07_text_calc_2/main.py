@@ -28,6 +28,7 @@ def calculate(info):
     return result
 
 
+# TODO вы два раза читает файл, как то можно это объеденить ?
 with open("message.txt", "r") as calculate_line:
     print("Содержимое файла {}\n{}".format(calculate_line.name, calculate_line.read()))
 
@@ -37,3 +38,5 @@ with open("message.txt", "r") as calculate_line:
         total_result += calculate(information.split())
 
 print("\nСумма результатов:", total_result)
+
+# TODO применить рекомендации в данные ранее

@@ -6,6 +6,7 @@ while True:
     questions = input("Ведите действе 1 или 2: ")
     if questions == "1":
         try:
+            # TODO что делает у вас этот код ? по флагам не пойму почему не дописываете encoding и ниже тоже
             with open("message.txt") as text:
                 result = text.read()
                 if len(result.split()) == 0:

@@ -1,3 +1,7 @@
+
+# TODO функции не должно быть дублирующей ся части кода
+# TODO with open только один раз
+# TODO пусть функция принимает еще имя файла для записи
 def write_protocols(flag, result):
     if flag:
         with open("registrations_bad.log", "a", encoding="utf-8") as bad_log:
@@ -34,3 +38,8 @@ with open("registrations.txt", "r", encoding="utf-8") as registration_protocols:
             print("Поле возраст НЕ является числом от 10 до 99:")
         else:
             write_protocols(False, protocol)
+
+# TODO вам нужно сделать так функцию как в прошлом модуле оставить и из нее только вынести часть с try except
+# TODO в цикл while
+# TODO в функции будите рейзить
+# TODO а в цикле while ловить
