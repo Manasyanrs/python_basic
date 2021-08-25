@@ -4,7 +4,7 @@ print("2. Отправить сообщение  (затем вводит соо
 
 while True:
     questions = input("Ведите действе 1 или 2: ")
-    if questions == "1" or int(questions) == 1:
+    if questions == "1":
         try:
             with open("message.txt") as text:
                 result = text.read()
@@ -15,20 +15,7 @@ while True:
         except (Warning, FileNotFoundError):
             print("Чат пустой")
 
-    if questions == "2" or int(questions) == 2:
-        while True:
-            write_massage = input("Введите сообщение: ")
-            with open("message.txt", "a") as text:
-                text.write("{} \n".format(write_massage))
-
-            try:
-                # TODO повторяющийся блок кода
-                with open("message.txt") as text:
-                    line = text.readlines()
-                for index in range(len(line) - 5, len(line)):
-                    print(line[index], end="")
-            except IndexError:
-                with open("message.txt") as text:
-                    print(text.read())
-
-
+    if questions == "2":
+        write_massage = input("Введите сообщение: ")
+        with open("message.txt", "a") as text:
+            text.write("{} \n".format(write_massage))
