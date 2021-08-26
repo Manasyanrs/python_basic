@@ -6,8 +6,7 @@ while True:
     questions = input("Ведите действе 1 или 2: ")
     if questions == "1":
         try:
-            # TODO что делает у вас этот код ? по флагам не пойму почему не дописываете encoding и ниже тоже
-            with open("message.txt") as text:
+            with open("message.txt", "r", encoding="utf-8") as text:
                 result = text.read()
                 if len(result.split()) == 0:
                     raise Warning
@@ -18,5 +17,5 @@ while True:
 
     if questions == "2":
         write_massage = input("Введите сообщение: ")
-        with open("message.txt", "a") as text:
+        with open("message.txt", "a", encoding="utf-8") as text:
             text.write("{} \n".format(write_massage))
