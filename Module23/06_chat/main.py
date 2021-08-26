@@ -19,3 +19,5 @@ while True:
         write_massage = input("Введите сообщение: ")
         with open("message.txt", "a", encoding="utf-8") as text:
             text.write("{} \n".format(write_massage))
+
+# зачет!

@@ -42,3 +42,5 @@ try:
 
 except FileNotFoundError:
     print("Файл с таким названием не существует.")
+
+# зачет!

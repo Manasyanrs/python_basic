@@ -36,3 +36,5 @@ with open("registrations.txt", "r", encoding="utf-8") as registration_protocols:
             write_protocols(good_log, protocol)
 
 print("Программа завершена")
+
+# зачет!
