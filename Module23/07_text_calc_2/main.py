@@ -18,7 +18,7 @@ def calculate(info):
             question = input("Обнаружена ошибка в строке: {} {} {}  Хотите исправить? ".format(
                 first, info[1], second)).lower()
             if question == "да":
-                reformat = input("Введите исправленную строку: ").split()
+                reformat = input("Введите исправленную строку с пробеламы: ").split()
                 result += calculate(reformat)
 
     except ValueError:
@@ -28,15 +28,17 @@ def calculate(info):
     return result
 
 
-# TODO вы два раза читает файл, как то можно это объеденить ?
-with open("message.txt", "r") as calculate_line:
-    print("Содержимое файла {}\n{}".format(calculate_line.name, calculate_line.read()))
+try:
+    with open("calc.txt", "r", encoding="utf-8") as calculate_line:
+        file = calculate_line.readlines()
+        print("Содержимое файла {}\n".format(calculate_line.name))
+        for element in file:
+            print(element, end="")
 
-total_result = 0
-with open("message.txt", "r") as calculate_line:
-    for information in calculate_line.readlines():
-        total_result += calculate(information.split())
+        total_result = 0
+        for information in file:
+            total_result += calculate(information.split())
+        print("\nСумма результатов:", total_result)
 
-print("\nСумма результатов:", total_result)
-
-# TODO применить рекомендации в данные ранее
+except FileNotFoundError:
+    print("Файл с таким названием не существует.")
