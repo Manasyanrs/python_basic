@@ -72,3 +72,5 @@ class BlackJack:
 
 game = BlackJack()
 game.start()
+
+# TODO выводим результат крупье

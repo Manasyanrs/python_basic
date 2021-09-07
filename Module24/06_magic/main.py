@@ -1,8 +1,10 @@
 class Water:
+    # TODO достаточно определить метод __str__
     def __init__(self, name):
         self.name = name
 
     def __add__(self, other):
+        # TODO используем isinstance() для проверки экземпляра на тип
         if other.name == "Воздух" and self.name == "Вода":
             return "{} + {} = Шторм".format(self.name, other.name)
         if other.name == "Огонь" and self.name == "Вода":

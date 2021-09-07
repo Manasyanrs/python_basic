@@ -12,6 +12,7 @@ class Parent:
         self.mather_age = mather_age
         age = min(father_age, mather_age)
         self.parent_age += age
+        # TODO родитель не должен принимать вот так класс ребенка
         Child.hungry += 1
 
     def information(self):
@@ -34,9 +35,12 @@ class Parent:
             else:
                 print("Упс у Вас нету ребенка с таким именем:\n")
 
+    # TODO если метод подчеркнут то нужно выполнить рекомендации
     def feed_the_baby(self):
         Child.hungry += 1
         print("Ребенок поел.\n")
+
+    # TODO пусть у вас будет метод который принимает экземпляр ребенка
 
 
 class Child:

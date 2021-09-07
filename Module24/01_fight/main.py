@@ -7,6 +7,10 @@ class Warrior:
         self.name = name
         self.health = 100
 
+    # TODO должны быть реализованы методы
+    # TODO проверки себя на жизнь
+    # TODO метод который ударяет себя, уменьшает жизнь на заданную величину
+
 
 warrior_1 = Warrior("Thanos")
 warrior_2 = Warrior("Hulk")

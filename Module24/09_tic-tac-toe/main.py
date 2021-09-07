@@ -34,6 +34,7 @@ class TicTacToe:
         print("|{}|".format(11 * "-"))
 
     def winner(self, argument):
+        # TODO не используем \ для переноса, попробуйте применить цикл
         if self.game_board[0][0] == self.game_board[1][0] == self.game_board[2][0] == argument or \
                 self.game_board[0][1] == self.game_board[1][1] == self.game_board[2][1] == argument or \
                 self.game_board[0][2] == self.game_board[1][2] == self.game_board[2][2] == argument or \
@@ -99,3 +100,5 @@ class TicTacToe:
 
 game = TicTacToe()
 game.play()
+
+# TODO если выбрать нолики то Х не ставиться
