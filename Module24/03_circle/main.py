@@ -44,3 +44,5 @@ test.perimeter()
 test.increase(2)
 test.perimeter()
 test.intersect()
+
+# зачет!

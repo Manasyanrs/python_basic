@@ -45,3 +45,5 @@ class Gardner:
 
 gardner = Gardner("Pedro", 3)
 gardner.garden_care()
+
+# зачет!

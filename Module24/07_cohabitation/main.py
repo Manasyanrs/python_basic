@@ -77,3 +77,5 @@ while True:
 
     else:
         person.play()
+
+# зачет!
