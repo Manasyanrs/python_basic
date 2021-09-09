@@ -30,6 +30,7 @@ class BlackJack:
             if question == "y":
                 self.score += self.random_card()
                 print("\nУ вас {} очков.".format(self.score))
+                print("У крупье {} очков\n".format(self.bot_score))
                 if self.score > 21:
                     break
                 elif self.score == 21:
@@ -62,6 +63,7 @@ class BlackJack:
             self.score += score
             self.bot_score += bot_score
         print("У вас {} очков.".format(self.score))
+        print("У крупье {} очков\n".format(self.bot_score))
 
         self.play()
         self.winner()
@@ -72,5 +74,3 @@ class BlackJack:
 
 game = BlackJack()
 game.start()
-
-# TODO выводим результат крупье

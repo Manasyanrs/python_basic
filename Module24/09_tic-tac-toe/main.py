@@ -2,6 +2,7 @@ import random
 
 
 class TicTacToe:
+    winner_combinations = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
     game_board = [
         ["1", "2", "3"],
         ["4", "5", "6"],
@@ -13,17 +14,6 @@ class TicTacToe:
         self.suit = "X"
         self.bot = "0"
 
-    def choice_of_suit(self):
-        while True:
-            suit = input("Выбирите масть Х или 0: ").upper()
-            if suit == "X" and suit == "X" or suit == "0":
-                self.bot = "0"
-                return suit
-            elif suit == "":
-                return self.suit
-            else:
-                print("Выброть надо Х или 0")
-
     def game_board_view(self):
         print("|{}|".format(11 * "-"))
         for row in self.game_board:
@@ -33,72 +23,93 @@ class TicTacToe:
             print()
         print("|{}|".format(11 * "-"))
 
-    def winner(self, argument):
-        # TODO не используем \ для переноса, попробуйте применить цикл
-        if self.game_board[0][0] == self.game_board[1][0] == self.game_board[2][0] == argument or \
-                self.game_board[0][1] == self.game_board[1][1] == self.game_board[2][1] == argument or \
-                self.game_board[0][2] == self.game_board[1][2] == self.game_board[2][2] == argument or \
-                self.game_board[0][0] == self.game_board[1][1] == self.game_board[2][2] == argument or \
-                self.game_board[0][2] == self.game_board[1][1] == self.game_board[2][0] == argument or \
-                self.game_board[0][0] == self.game_board[0][1] == self.game_board[0][2] == argument or \
-                self.game_board[1][0] == self.game_board[1][1] == self.game_board[1][2] == argument or \
-                self.game_board[2][0] == self.game_board[2][1] == self.game_board[2][2] == argument:
-            return self.suit
+    def choice_of_suit(self):
+        while True:
+            suit = input("Выбирите масть Х или 0: ").upper()
+            if suit == "X" and suit == "X":
+                self.suit = "X"
+                self.bot = "0"
+                return suit
+            elif suit == "0":
+                self.suit = "0"
+                self.bot = "X"
+                return suit
+            elif suit == "":
+                return self.suit
+            else:
+                print("Выброть надо Х или 0")
 
-        elif self.game_board[0][0] == self.game_board[1][0] == self.game_board[2][0] == self.bot or \
-                self.game_board[0][1] == self.game_board[1][1] == self.game_board[2][1] == self.bot or \
-                self.game_board[0][2] == self.game_board[1][2] == self.game_board[2][2] == self.bot or \
-                self.game_board[0][0] == self.game_board[1][1] == self.game_board[2][2] == self.bot or \
-                self.game_board[0][2] == self.game_board[1][1] == self.game_board[2][0] == self.bot or \
-                self.game_board[0][0] == self.game_board[0][1] == self.game_board[0][2] == self.bot or \
-                self.game_board[1][0] == self.game_board[1][1] == self.game_board[1][2] == self.bot or \
-                self.game_board[2][0] == self.game_board[2][1] == self.game_board[2][2] == self.bot:
-            return self.bot
-        else:
+    def play_bot(self, argument):
+        bot_digit = 0
+        if len(self.numbers) > 0:
+            random_digit = random.choice(self.numbers)
+            bot_digit += random_digit
+            line = 0
+            for element in self.game_board:
+                if str(random_digit) in element:
+                    self.game_board[line][element.index(str(random_digit))] = self.bot
+                line += 1
+            self.numbers.pop(self.numbers.index(random_digit))
+
+        index = 0
+        for combination in argument:
+            if bot_digit in combination:
+                argument[index][combination.index(bot_digit)] = self.bot
+            index += 1
+
+    def player(self, enter_number, argument):
+        line = 0
+        for element in self.game_board:
+            if enter_number in element:
+                self.game_board[line][element.index(enter_number)] = self.suit
+            line += 1
+        self.numbers.pop(self.numbers.index(int(enter_number)))
+
+        index = 0
+        for combination in argument:
+            if int(enter_number) in combination:
+                argument[index][combination.index(int(enter_number))] = self.suit
+            index += 1
+
+    def winner(self, argument):
+        for element in argument:
+            if element.count("X") == 3:
+                return "X"
+            if element.count("0") == 3:
+                return "0"
             if len(self.numbers) == 0:
                 return 0
 
     def play(self):
         print("Добро пожаловать в игру крестики нолики\n")
-        suit = self.choice_of_suit()
-        while True:
+        self.choice_of_suit()
+        flag = True
+        while flag:
             self.game_board_view()
             try:
                 number = input("Введите число (от 1 до 9) где хотитье поставить ваш масть: ")
-                self.numbers.pop(self.numbers.index(int(number)))
-                bot_digit = ""
-                if len(self.numbers) > 0:
-                    bot_number = str(random.choice(self.numbers))
-                    bot_digit += bot_number
+                self.player(number, self.winner_combinations)
 
-                line = 0
-                for element in self.game_board:
-                    if number in element:
-                        self.game_board[line][element.index(number)] = suit
+                self.play_bot(self.winner_combinations)
 
-                    if bot_digit in element:
-                        self.game_board[line][element.index(bot_digit)] = self.bot
-                        self.numbers.pop(self.numbers.index(int(bot_digit)))
-                    line += 1
+                if self.winner(self.winner_combinations) == self.suit:
+                    print("\nВыиграл", self.suit)
+                    self.game_board_view()
+                    flag = False
+
+                elif self.winner(self.winner_combinations) == self.bot:
+                    print("\nВыиграл", self.bot)
+                    self.game_board_view()
+                    flag = False
+
+                elif self.winner(self.winner_combinations) == 0:
+                    print("\nИгра закочилься нечей")
+                    self.game_board_view()
+                    flag = False
 
             except ValueError:
                 print("Данний номер занят")
-            finally:
-                if self.winner(suit) == self.suit:
-                    print("\nВыиграл", self.suit)
-                    self.game_board_view()
-                    break
-                elif self.winner(suit) == self.bot:
-                    print("\nВыиграл", self.bot)
-                    self.game_board_view()
-                    break
-                elif self.winner(suit) == 0:
-                    print("Игра закончился ничьей")
-                    self.game_board_view()
-                    break
 
 
 game = TicTacToe()
 game.play()
-
-# TODO если выбрать нолики то Х не ставиться

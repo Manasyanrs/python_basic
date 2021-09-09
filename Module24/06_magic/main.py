@@ -1,16 +1,14 @@
 class Water:
-    # TODO достаточно определить метод __str__
     def __init__(self, name):
         self.name = name
 
     def __add__(self, other):
-        # TODO используем isinstance() для проверки экземпляра на тип
         if other.name == "Воздух" and self.name == "Вода":
-            return "{} + {} = Шторм".format(self.name, other.name)
-        if other.name == "Огонь" and self.name == "Вода":
-            return "{} + {} = Пар".format(self.name, other.name)
-        if other.name == "Земля" and self.name == "Вода":
-            return "{} + {} = Грязь".format(self.name, other.name)
+            return "{} + {} = Шторм".format(other.name, self.name)
+        elif other.name == "Огонь" and self.name == "Вода":
+            return "{} + {} = Пар".format(other.name, self.name)
+        elif other.name == "Земля" and self.name == "Вода":
+            return "{} + {} = Грязь".format(other.name, self.name)
 
 
 class Air:
@@ -19,9 +17,9 @@ class Air:
 
     def __add__(self, other):
         if other.name == "Огонь" and self.name == "Воздух":
-            return "{} + {} = Молния".format(self.name, other.name)
-        if other.name == "Земля" and self.name == "Воздух":
-            return "{} + {} = Пыль".format(self.name, other.name)
+            return "{} + {} = Молния".format(other.name, self.name)
+        elif other.name == "Земля" and self.name == "Воздух":
+            return "{} + {} = Пыль".format(other.name, self.name)
 
 
 class Fire:
@@ -30,7 +28,7 @@ class Fire:
 
     def __add__(self, other):
         if other.name == "Земля" and self.name == "Огонь":
-            return "{} + {} = Лава".format(self.name, other.name)
+            return "{} + {} = Лава".format(other.name, self.name)
 
 
 class Earth:
@@ -44,14 +42,14 @@ fire = Fire("Огонь")
 earth = Earth("Земля")
 
 storm = water + air
-vapor = water + fire
-dirt = water + earth
-lightning = air + fire
-dust = air + earth
-lava = fire + earth
 print(storm)
+vapor = water + fire
 print(vapor)
+dirt = water + earth
 print(dirt)
+lightning = air + fire
 print(lightning)
+dust = air + earth
 print(dust)
+lava = fire + earth
 print(lava)
