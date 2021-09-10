@@ -113,3 +113,5 @@ class TicTacToe:
 
 game = TicTacToe()
 game.play()
+
+# зачет!

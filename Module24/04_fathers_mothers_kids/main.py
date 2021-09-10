@@ -83,3 +83,5 @@ sem.child_hungry_state()
 parent.feed_the_baby(bob)
 
 bob.state_of_calm()
+
+# зачет!

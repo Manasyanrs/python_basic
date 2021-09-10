@@ -38,3 +38,5 @@ for digit in sorted(scores):
         index = average_score.split()
         if digit == index[-1]:
             print("{:20} | {:10} | {:5}".format(index[0] + " " + index[1], index[2], index[3]))
+
+# зачет!

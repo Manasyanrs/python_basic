@@ -40,3 +40,5 @@ if warrior_1.health > 0:
     print("\nПобедил воин {}".format(warrior_1.name))
 else:
     print("\nПобедил воин {}".format(warrior_2.name))
+
+# зачет!
