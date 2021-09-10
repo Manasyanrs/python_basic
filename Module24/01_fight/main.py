@@ -7,31 +7,36 @@ class Warrior:
         self.name = name
         self.health = 100
 
-    # TODO должны быть реализованы методы
-    # TODO проверки себя на жизнь
-    # TODO метод который ударяет себя, уменьшает жизнь на заданную величину
+    def battle(self):
+        self.health -= 20
+        return self.life()
+
+    def life(self):
+        if self.health > 0:
+            return True
+        else:
+            return False
 
 
 warrior_1 = Warrior("Thanos")
 warrior_2 = Warrior("Hulk")
+print("Игра началась\n")
+flag = True
+while flag:
+    hit = random.randint(1, 2)
+    if hit == 1:
+        flag = warrior_2.battle()
+        print("Атаковал воин {} здоровья = {}% у противника осталось {}% здоровья".format(
+            warrior_1.name, warrior_1.health, warrior_2.health
+        ))
 
-while True:
-    if warrior_1.health > 0 and warrior_2.health > 0:
-        hit = random.randint(1, 2)
-        if hit == 1:
-            warrior_2.health -= 20
-            print("Атаковал воин {} у противника осталось {}% здоровья".format(
-                warrior_1.name, warrior_2.health
-            ))
-
-        else:
-            warrior_1.health -= 20
-            print("Атаковал воин {} у противника осталось {}% здоровья".format(
-                warrior_2.name, warrior_1.health
-            ))
     else:
-        if warrior_1.health > 0:
-            print("\nПобедитель {}".format(warrior_1.name))
-        else:
-            print("\nПобедитель {}".format(warrior_2.name))
-        break
+        flag = warrior_1.battle()
+        print("Атаковал воин {} здоровья = {}% у противника осталось {}% здоровья".format(
+            warrior_2.name, warrior_2.health, warrior_1.health
+        ))
+
+if warrior_1.health > 0:
+    print("\nПобедил воин {}".format(warrior_1.name))
+else:
+    print("\nПобедил воин {}".format(warrior_2.name))

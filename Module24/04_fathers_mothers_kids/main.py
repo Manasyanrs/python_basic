@@ -10,10 +10,7 @@ class Parent:
         self.father_age = father_age
         self.mather_name = mather_name
         self.mather_age = mather_age
-        age = min(father_age, mather_age)
-        self.parent_age += age
-        # TODO родитель не должен принимать вот так класс ребенка
-        Child.hungry += 1
+        self.parent_age = min(father_age, mather_age)
 
     def information(self):
         if len(self.childes) == 0:
@@ -35,12 +32,10 @@ class Parent:
             else:
                 print("Упс у Вас нету ребенка с таким именем:\n")
 
-    # TODO если метод подчеркнут то нужно выполнить рекомендации
-    def feed_the_baby(self):
-        Child.hungry += 1
+    @staticmethod
+    def feed_the_baby(variable_child):
+        variable_child.hungry += 1
         print("Ребенок поел.\n")
-
-    # TODO пусть у вас будет метод который принимает экземпляр ребенка
 
 
 class Child:
@@ -52,7 +47,8 @@ class Child:
         self.child_name = child_name
         self.child_age = child_age
         if self.child_age > parent.parent_age - 16:
-            print("Родитель должен быть старше над ребенком хотя би на 16 лет\n")
+            print("{} не может быть вашем ребенком, так как \n"
+                  "Родитель должен быть старше над ребенком хотя бы на 16 лет\n".format(child_name))
 
         else:
             Parent.childes.append("Имя: {} \nвозрост: {}\n".format(self.child_name, self.child_age))
@@ -74,15 +70,16 @@ tim = Child("Tim", 15)
 bob = Child("Bob", 12)
 sem = Child("Sem", 9)
 
+parent.information()
 parent.calm_child("Bob")
 
-parent.information()
+
 sem.child_hungry_state()
 bob.child_hungry_state()
 
-parent.feed_the_baby()
+parent.feed_the_baby(tim)
 
 sem.child_hungry_state()
-parent.feed_the_baby()
+parent.feed_the_baby(bob)
 
 bob.state_of_calm()
