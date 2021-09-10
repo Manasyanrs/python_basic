@@ -53,3 +53,5 @@ dust = air + earth
 print(dust)
 lava = fire + earth
 print(lava)
+
+# TODO почему не применили метод isinstance
