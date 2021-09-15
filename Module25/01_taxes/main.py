@@ -1,4 +1,5 @@
 class Property:
+    # TODO не даем переменной название class
     __class_name = "имущество"
 
     def __init__(self, means, worth):

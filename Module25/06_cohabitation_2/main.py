@@ -44,7 +44,7 @@ class House:
     def set_dirt(count_dirt):
         House.__amount_of_dirt += count_dirt
 
-
+# TODO человека наследовали от дома ? получается какой то человеко-дом
 class Human(House):
     """
     Любое действие кроме "есть", приводит к уменьшению степени сытости на 10 пунктов
@@ -158,7 +158,7 @@ class Wife(Human):
         self.set_satiety(-10)
         self.set_dirt(-100)
 
-
+# TODO кота наследовали от дома ?
 class Cat(House):
     """
     У кота есть имя и степень сытости (в начале - 30)
