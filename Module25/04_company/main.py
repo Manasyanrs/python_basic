@@ -94,3 +94,5 @@ for index, person in enumerate(workers):
             print("\nЗарплата рабочих\n\n{}".format(person))
         else:
             print(person)
+
+# зачет!
