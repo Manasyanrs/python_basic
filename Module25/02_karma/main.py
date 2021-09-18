@@ -1,29 +1,64 @@
 import random
 
 
-def one_day():
-    return random.randint(1, 7)
+class KillError(Exception):
+    pass
 
-# TODO список с ошибками должны быть объектами названия без ()
-exceptions = ["KillError", "DrunkError", "CarCrashError", "GluttonyError", "DepressionError"]
-karma_points = 0
-iterations = 0
-while karma_points <= 500:
-    iterations += 1
-    point = one_day()
-    if iterations % 10 != 0:
-        karma_points += point
+
+class DrunkError(Exception):
+    pass
+
+
+class CarCrashError(Exception):
+    pass
+
+
+class GluttonyError(Exception):
+    pass
+
+
+class DepressionError(Exception):
+    pass
+
+
+def one_day(file):
+    karma = random.randint(1, 7)
+    error = random.randint(1, 10)
+
+    if error != 1:
+        return karma
+
     else:
-        # TODO  функцию объявить вне цикла открывать на запись один раз
-        with open("karma.log", "a", encoding="utf-8") as karma:
-            karma.write("{}\n".format(random.choice(exceptions)))
+        # TODO далее условие если еррор равен 13 то мы choice выбираем случайное исключение из списка
+        # TODO и его рейзим как объект используя ()
+        result = random.choice(file)
+        # TODO не понимаю как можно к result-у исползовать ()
+        raise result
 
-# TODO функция one_day() должна возвращать карму от 1 до 7 или рейзит ошибку из расчета 1 к 13
-# TODO мы можем объявить 2 переменные это карма равная рендинт от 1 до 7 и
-# TODO сам еррор который тоже равен рендинт от 1 до 13
-# TODO далее условие если еррор равен 13 то мы choice выбираем случайное исключение из списка
-# TODO и его рейзим как объект используя ()
-# TODO если условие не сработало то мы ретурним карму
 
-# TODO в цикле
-# TODO ловим каждую ошибку и формируя текст ее
+exceptions = [KillError, DrunkError, CarCrashError, GluttonyError, DepressionError]
+karma_points = 0
+errors = []
+while karma_points <= 500:
+    point = one_day(exceptions)
+
+    if isinstance(point, int):
+        karma_points += point
+
+    else:
+        # TODO не пойму что вернет point чтобы реолизовать блок else
+        errors.append(str(point))
+        if point == KillError:
+            raise KillError("KillError")
+        if point == DrunkError:
+            raise DrunkError("DrunkError")
+        if point == CarCrashError:
+            raise CarCrashError("CarCrashError")
+        if point == KillError:
+            raise KillError("GluttonyError")
+        if point == DepressionError:
+            raise DepressionError("DepressionError")
+
+
+with open("karma.log", "w", encoding="utf-8") as karma:
+    karma.write("{}".format(errors))

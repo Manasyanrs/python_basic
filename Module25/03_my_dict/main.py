@@ -1,17 +1,22 @@
-# TODO наледоваться от dict
-class MyDict:
+class MyDict(dict):
     def __init__(self, file):
         self.file = file
+        super().__init__()
 
-    def get(self, key, info=""):
-        # TODO сильно усложнили нужно просто переопределитть родительский класс
-        for name in self.file:
-            if key == name:
-                return key
-            else:
-                if len(info) > 0:
-                    return info
-                else:
-                    return 0
+    def get(self, key):
+        if key in self.file:
+            return self.file[key]
 
-# TODO запустить
+        else:
+            return 0
+
+
+test_file = {
+    "address": "123.456.840.2",
+    "name": "NAME",
+    "symbol": "!@#$%^&*"
+}
+
+test = MyDict(test_file)
+print(test.get(5))
+print(test.get("name"))
