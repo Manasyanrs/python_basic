@@ -1,21 +1,6 @@
-
-# TODO вот такая реализация в инит ничего не добавляем потому что можем сломать логику
-# class MyDict(dict):
-#     def get(self, key, default=0):
-#         return super().get(key, default)
-
-
 class MyDict(dict):
-    def __init__(self, file):
-        self.file = file
-        super().__init__()
-
-    def get(self, key):
-        if key in self.file:
-            return self.file[key]
-
-        else:
-            return 0
+    def get(self, key, default=0):
+        return super().get(key, default)
 
 
 test_file = {
@@ -24,6 +9,7 @@ test_file = {
     "symbol": "!@#$%^&*"
 }
 
-test = MyDict(test_file)
+test = MyDict()
 print(test.get(5))
-print(test.get("name"))
+# TODO при такой кострукции не работет метод если ключ есть
+print(test.get("name"))     # Ответ 0
