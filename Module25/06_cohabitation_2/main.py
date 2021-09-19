@@ -44,8 +44,8 @@ class House:
     def set_dirt(count_dirt):
         House.__amount_of_dirt += count_dirt
 
-# TODO человека наследовали от дома ? получается какой то человеко-дом
-class Human(House):
+
+class Human:
     """
     Любое действие кроме "есть", приводит к уменьшению степени сытости на 10 пунктов
     У людей есть имя,
@@ -59,6 +59,7 @@ class Human(House):
 
     def __init__(self, name):
         self.__name = name
+        self.house = House()
 
     def get_name(self):
         return self.__name
@@ -75,7 +76,7 @@ class Human(House):
         Human.__degree_of_satiety -= 10
 
     def eat(self):
-        self.set_fridge(-10)
+        self.house.set_fridge(-10)
         Human.__degree_of_satiety += 10
 
     def set_satiety(self, count_satiety):
@@ -108,7 +109,7 @@ class Husband(Human):
 
     def work(self):
         self.set_satiety(-10)
-        self.set_bedside_table_with_money(150)
+        self.house.set_bedside_table_with_money(150)
 
 
 class Wife(Human):
@@ -139,27 +140,27 @@ class Wife(Human):
         self.to_buy_food()
         self.buy_a_fur_coat()
 
-        if self.get_pet_food() < 20:
-            self.set_pet_food(30)
-            self.set_bedside_table_with_money(-30)
+        if self.house.get_pet_food() < 20:
+            self.house.set_pet_food(30)
+            self.house.set_bedside_table_with_money(-30)
 
     def to_buy_food(self):
-        self.set_bedside_table_with_money(-50)
-        self.set_fridge(50)
+        self.house.set_bedside_table_with_money(-50)
+        self.house.set_fridge(50)
         self.__total_eat_food += 50
 
     def buy_a_fur_coat(self):
-        if self.get_bedside_table_with_money() - 50 >= 350:
-            self.set_bedside_table_with_money(-350)
+        if self.house.get_bedside_table_with_money() - 50 >= 350:
+            self.house.set_bedside_table_with_money(-350)
             self.set_happiness(60)
             self.__count_coat += 1
 
     def get_clean_the_house(self):
         self.set_satiety(-10)
-        self.set_dirt(-100)
+        self.house.set_dirt(-100)
 
-# TODO кота наследовали от дома ?
-class Cat(House):
+
+class Cat:
     """
     У кота есть имя и степень сытости (в начале - 30)
     Любое действие кроме "есть", приводит к уменьшению степени сытости на 10 пунктов
@@ -175,18 +176,18 @@ class Cat(House):
 
     def __init__(self, name):
         self.__name = name
-        super().__init__()
+        self.house = House()
 
     def eat(self):
         self.__degree_of_satiety_cat += 2 * 10
-        self.set_pet_food(-10)
+        self.house.set_pet_food(-10)
 
     def slip(self):
         self.__degree_of_satiety_cat -= 10
 
     def play(self):
         self.__degree_of_satiety_cat -= 10
-        self.set_dirt(5)
+        self.house.set_dirt(5)
 
     def get_degree(self):
         return self.__degree_of_satiety_cat
@@ -223,7 +224,7 @@ while flag:
         if house.get_dirt() == 100:
             wife.get_clean_the_house()
 
-    if cat.get_pet_food() < 20:
+    if cat.house.get_pet_food() < 20:
         wife.pat_the_pet()
         wife.go_shop()
 
@@ -231,7 +232,7 @@ while flag:
 
     if count_day == 365:
         print("\nИтоги жизни за год:\nЗаработано денег {}\nСьедено еды {} единиц\nКуплено шуб {} штук".format(
-            husband.get_bedside_table_with_money(), wife.get_total_food(), wife.get_coat()
+            husband.house.get_bedside_table_with_money(), wife.get_total_food(), wife.get_coat()
         ))
 
         flag = False
