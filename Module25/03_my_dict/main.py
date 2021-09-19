@@ -3,6 +3,7 @@ class MyDict(dict):
         return super().get(key, default)
 
 
+# TODO а как наш класс знает о этом объекте ?
 test_file = {
     "address": "123.456.840.2",
     "name": "NAME",
@@ -10,6 +11,7 @@ test_file = {
 }
 
 test = MyDict()
+# TODO чтобы в нем были данные в него нужно что то добавить сейчас он пуст
 print(test.get(5))
-# TODO при такой кострукции не работет метод если ключ есть
+# при такой кострукции не работет метод если ключ есть
 print(test.get("name"))     # Ответ 0
