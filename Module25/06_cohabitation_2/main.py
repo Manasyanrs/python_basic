@@ -238,3 +238,5 @@ while flag:
         flag = False
 
     count_day += 1
+
+# зачет!

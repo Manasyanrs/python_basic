@@ -66,3 +66,5 @@ apartment = Apartment(means=89600, worth=115700)
 print(apartment)
 car = Car(means=3500, worth=5700)
 print(car)
+
+# зачет!

@@ -57,3 +57,5 @@ bus.output_passengers(count_passengers=15)
 print(bus)
 bus.move(distance=20)
 print(bus)
+
+# зачет!
