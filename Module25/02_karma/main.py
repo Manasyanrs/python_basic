@@ -54,3 +54,5 @@ while karma_points <= 500:
 
 with open("karma.log", "w", encoding="utf-8") as karma:
     karma.write("{}".format(errors))
+
+# зачет!
