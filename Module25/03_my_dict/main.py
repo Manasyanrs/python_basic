@@ -1,17 +1,18 @@
 class MyDict(dict):
+    def __getitem__(self, item):
+        self.item = item
+
     def get(self, key, default=0):
         return super().get(key, default)
 
 
-# TODO а как наш класс знает о этом объекте ?
 test_file = {
     "address": "123.456.840.2",
     "name": "NAME",
     "symbol": "!@#$%^&*"
 }
 
-test = MyDict()
-# TODO чтобы в нем были данные в него нужно что то добавить сейчас он пуст
+test = MyDict(test_file)
+print(test.get("address"))
 print(test.get(5))
-# при такой кострукции не работет метод если ключ есть
-print(test.get("name"))     # Ответ 0
+print(test.get("name"))
