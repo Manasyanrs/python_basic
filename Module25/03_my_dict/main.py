@@ -16,3 +16,5 @@ test = MyDict(test_file)
 print(test.get("address"))
 print(test.get(5))
 print(test.get("name"))
+
+# зачет!
