@@ -36,3 +36,5 @@ print("\n")
 my_generator = (element ** 2 for element in range(questions))
 for generator_digit in my_generator:
     print(generator_digit, end=" ")
+
+# зачет!

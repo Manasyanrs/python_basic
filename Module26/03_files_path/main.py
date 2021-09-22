@@ -14,3 +14,5 @@ gen_files = (element for element in gen_files_path())
 for file in gen_files:
     if questions in file:
         break
+
+# зачет!

@@ -49,3 +49,5 @@ print('Новый список:', my_list)
 
 for digit in my_list:
     print(digit)
+
+# зачет!

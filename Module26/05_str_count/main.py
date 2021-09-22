@@ -20,3 +20,5 @@ for path_file in result:
                 count_lines += 1
 
 print("Обшая количество строк:", count_lines)
+
+# зачет!
