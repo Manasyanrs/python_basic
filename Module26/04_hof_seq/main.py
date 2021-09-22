@@ -23,3 +23,7 @@ class QHofstadter:
 hofstadter = QHofstadter([1, 1])
 for _ in range(10):
     print(next(hofstadter), end=" ")
+
+# TODO не работает
+# Если передать значения [1, 2], то последовательность должна немедленно завершиться.
+

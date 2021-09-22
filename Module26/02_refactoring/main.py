@@ -4,6 +4,7 @@ from collections.abc import Iterable
 def generator(file_1: list, file_2: list) -> Iterable:
     for digit in file_1:
         for number in file_2:
+            # TODO переменные не должны пересекаться
             result = digit * number
             print("{} * {} = {}".format(digit, number, result))
             yield result
@@ -18,3 +19,5 @@ for information in result:
     if information == to_find:
         print("Found!!!")
         break
+
+# TODO нейминг
