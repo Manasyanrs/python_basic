@@ -2,22 +2,24 @@ from collections.abc import Iterable
 
 
 def generator(file_1: list, file_2: list) -> Iterable:
-    for digit in file_1:
-        for number in file_2:
-            # TODO переменные не должны пересекаться
-            result = digit * number
-            print("{} * {} = {}".format(digit, number, result))
-            yield result
+    new_file = zip(file_1, file_2)
+    for digits in new_file:
+        result = digits[0] * digits[1]
+        print("{} * {} = {}".format(digits[0], digits[1], result))
+        yield result
 
 
-list_1 = [2, 5, 7, 10]
-list_2 = [3, 8, 4, 9]
+variable_1 = [2, 5, 7, 10]
+variable_2 = [3, 8, 4, 9]
 to_find = 56
+iteration = 0
 
-result = generator(file_1=list_1, file_2=list_2)
+result = generator(file_1=variable_1, file_2=variable_2)
 for information in result:
     if information == to_find:
-        print("Found!!!")
+        print("Нашлось!!!")
         break
+    iteration = 1
 
-# TODO нейминг
+if iteration == 1:
+    print("Не нашлось")

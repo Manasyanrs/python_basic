@@ -6,6 +6,9 @@ class QHofstadter:
         self.__file = file
         self.__counter = 0
 
+    def get_file(self):
+        return self.__file
+
     def __next__(self) -> int:
         if self.__counter < len(self.__file):
             result = self.__file[-self.__file[-1]] + self.__file[-self.__file[-2]]
@@ -22,8 +25,9 @@ class QHofstadter:
 
 hofstadter = QHofstadter([1, 1])
 for _ in range(10):
-    print(next(hofstadter), end=" ")
+    if hofstadter.get_file() == [1, 2]:
+        print("Нельзя передать значения", end=" ")
+        break
+    next(hofstadter)
 
-# TODO не работает
-# Если передать значения [1, 2], то последовательность должна немедленно завершиться.
-
+print(hofstadter.get_file())
