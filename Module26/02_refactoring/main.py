@@ -23,3 +23,5 @@ for information in result:
 
 if iteration == 1:
     print("Не нашлось")
+
+# зачет!

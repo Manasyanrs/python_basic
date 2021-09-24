@@ -31,3 +31,5 @@ for _ in range(10):
     next(hofstadter)
 
 print(hofstadter.get_file())
+
+# зачет!
