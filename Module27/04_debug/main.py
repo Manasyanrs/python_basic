@@ -2,6 +2,7 @@ from typing import Callable, Any
 import functools
 
 
+# TODO дать более явное название
 def decoration(function: Callable) -> Any:
     """ Декаратор обработовает пераданную функцию и выводит её имя (вместе со всеми передаваемыми аргументами)/
     И после этого выводится результат её выполнения

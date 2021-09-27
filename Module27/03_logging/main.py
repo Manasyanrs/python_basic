@@ -3,6 +3,7 @@ from typing import Callable, Any
 import functools
 
 
+# TODO дать более явное название
 def decoration(function: Callable) -> Any:
     """ Декаратор обработовает пераданную функцию если находит ошыбки
     то в файл function_errors.log записываются название функции и название ошибки
@@ -14,11 +15,16 @@ def decoration(function: Callable) -> Any:
     def wrapper(*args, **kwargs) -> Any:
         data_time = datetime.datetime.now()
         errors = ""
+        # TODO  логирование можно сразу сделать тут
 
         try:
+            # TODO лучше записать рещультат работы в переменную
             function(*args, **kwargs)
 
         except TypeError:
+            # TODO и залогировать ошибку тут используя модуль logging
+
+            # TODO знак для переноса не используем в коде
             errors += "Названые функции {function_name}\n" \
                      "Названые ошибки {errors_name}\n" \
                      "Дата и время ошибки {data_time}\n".format(
@@ -28,6 +34,7 @@ def decoration(function: Callable) -> Any:
 
         with open("function_errors.log", "a", encoding="utf-8") as error:
             error.write(str(errors))
+        # TODO тут мы должны вернуть работу переменной полученной выше
         return "Программа завершилься"
     return wrapper
 
@@ -47,8 +54,8 @@ def logging(function: Callable) -> Any:
     return wrapper
 
 
-# TODO при логирование не работает декоратор
-# TODO а без логирование не получается обработать ошибки
+#  при логирование не работает декоратор
+#  а без логирование не получается обработать ошибки
 @logging
 @decoration
 def is_digit(file: Any) -> Any:
