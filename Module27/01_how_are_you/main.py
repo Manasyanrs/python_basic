@@ -30,3 +30,5 @@ def factorial(digit: int) -> str:
 
 
 print(factorial(5))
+
+# зачет!

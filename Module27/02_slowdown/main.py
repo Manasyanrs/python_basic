@@ -20,3 +20,5 @@ def variation() -> bool:
 
 
 print(variation())
+
+# зачет!
