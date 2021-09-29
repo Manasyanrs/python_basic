@@ -22,3 +22,5 @@ def even_number(digit: int) -> str:
 for digit in range(10):
     if digit % 2 == 0:
         print(even_number(digit))
+
+# зачет!

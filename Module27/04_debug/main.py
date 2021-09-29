@@ -66,3 +66,5 @@ def greeting(name: str, age=None) -> str:
 greeting("Том")
 greeting("Миша", age=100)
 greeting(name="Катя", age=16)
+
+# зачет!
