@@ -16,8 +16,8 @@ class Date:
         total_result = cls(day, month, year)
         return total_result
 
-    #TODO не работает
 
+    # TODO этот метод класс должен быть и все параметры не должно относиться к экземпляру Date
     def is_date_valid(self, form_data: str) -> bool:
         result = form_data.split("-")
         self.day, self.month, self.year = result[0], result[1], result[2]
