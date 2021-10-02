@@ -28,3 +28,5 @@ cube_volume = MyMath.cube_volume(radius=6)
 print("Объём куба = {}".format(cube_volume))
 area_sphere = MyMath.surface_area_sphere(radius=6)
 print("Площадь поверхности сферы = {}".format(area_sphere))
+
+# зачет!
