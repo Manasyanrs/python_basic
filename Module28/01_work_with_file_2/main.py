@@ -15,21 +15,20 @@ class File:
         self.__method = method
 
     def __enter__(self):
-        # TODO эту строку  кода нужно обернуть в конструкцию try exception
-        # TODO ловить ошибку  IOError
-        # TODO если ее поймали открываем файл через флаг w
-        self.result = open(self.__file_name, self.__method)
-        return self.result
+        # TODO если файла нету то excep разве не NameError
+        try:
+            self.result = open(self.__file_name)
+            return self.result
+        except IOError:
+            return open(self.__file_name, self.__method, encoding="utf-8")
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> bool:
-        # TODO нужно проверить если exc_type is IOError
-        # TODO то тогда закрываем файл и вернем True
-        # TODO после условия в любом случае файл нужно закрыть
+        if exc_type is IOError:
+            self.result.close()
+            print("Программа шавершена:")
+            return True
         self.result.close()
-        print("Программа шавершена:")
-        return True
 
 
-# TODO а если влаг не указать код упадет
 with File(file_name="example.txt", method="w") as file:
     file.write("Всем привет!")

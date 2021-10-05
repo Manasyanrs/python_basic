@@ -16,13 +16,11 @@ class Date:
         total_result = cls(day, month, year)
         return total_result
 
-
-    # TODO этот метод класс должен быть и все параметры не должно относиться к экземпляру Date
-    def is_date_valid(self, form_data: str) -> bool:
+    @classmethod
+    def is_date_valid(cls, form_data: str) -> bool:
         result = form_data.split("-")
-        self.day, self.month, self.year = result[0], result[1], result[2]
-
-        if 0 < int(self.day) <= 31 and 0 < int(self.month) <= 12 and 0 < int(self.year) <= 2077:
+        day, month, year = result[0], result[1], result[2]
+        if 0 < int(day) <= 31 and 0 < int(month) <= 12 and 0 < int(year) <= 2077:
             return True
         return False
 
