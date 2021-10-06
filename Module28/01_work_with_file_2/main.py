@@ -15,12 +15,12 @@ class File:
         self.__method = method
 
     def __enter__(self):
-        # TODO если файла нету то excep разве не NameError
+        # вот так делаем
         try:
-            self.result = open(self.__file_name)
-            return self.result
+            self.result = open(self.__file_name, self.__method, encoding="utf-8")
         except IOError:
-            return open(self.__file_name, self.__method, encoding="utf-8")
+            self.result = open(self.__file_name, "w", encoding="utf-8")
+        return self.result
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> bool:
         if exc_type is IOError:
@@ -32,3 +32,5 @@ class File:
 
 with File(file_name="example.txt", method="w") as file:
     file.write("Всем привет!")
+
+# зачет!
