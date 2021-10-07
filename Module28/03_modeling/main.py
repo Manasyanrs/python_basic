@@ -49,6 +49,8 @@ class SquareMixin:
 
     def square(self):
         __total_area = 0
+        # TODO тут мы идем по self.surfaces
+        # TODO получаем surface
         for obj in surfaces:
             __total_area += obj.area(self)
         return __total_area
