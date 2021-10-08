@@ -47,9 +47,6 @@ class Triangle:
 
 
 class SquareMixin:
-    def __init__(self):
-        self.surfaces = None
-
     def square(self):
         __total_area = 0
         for obj in self.surfaces:
@@ -76,3 +73,5 @@ print("Площадь поверхности куба =", square3d)
 pyramid = Pyramid(height=3, base=4)
 pyramid3d = pyramid.square()
 print("Площадь поверхности пирамиди =", pyramid3d)
+
+# зачет!
