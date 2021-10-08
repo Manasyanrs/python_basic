@@ -41,17 +41,18 @@ class Triangle:
         result = 0.5 * self.base * self.height
         return result
 
+    def perimeter(self, side_a: int or float, side_b: int or float) -> int or float:
+        result = side_a + side_b + self.base
+        return result
+
 
 class SquareMixin:
-    # TODO далее заводим цикл по переменной в которой как мы ожидаем будет список self.surfaces:
-    # TODO у объекта из списка мы вызываем метод area полученный результат записываем в переменную
-    # TODO возвращаем результат
+    def __init__(self):
+        self.surfaces = None
 
     def square(self):
         __total_area = 0
-        # TODO тут мы идем по self.surfaces
-        # TODO получаем surface
-        for obj in surfaces:
+        for obj in self.surfaces:
             __total_area += obj.area(self)
         return __total_area
 
@@ -62,18 +63,16 @@ class Cube(Square, SquareMixin):
         self.surfaces = [Square, Square, Square, Square, Square, Square]
 
 
-class Pyramid(Square, Triangle, SquareMixin):
-    def __init__(self, length: int or float):
-        super().__init__(length)
+class Pyramid(Triangle, SquareMixin):
+    def __init__(self, height: int or float, base: int or float):
+        super().__init__(height, base)
         self.surfaces = [Triangle, Triangle, Triangle, Triangle]
 
 
 cube = Cube(length=3)
-surfaces = cube.surfaces
 square3d = cube.square()
-print(square3d)
+print("Площадь поверхности куба =", square3d)
 
-pyramid = Pyramid(length=3)
-surfaces = pyramid.surfaces
+pyramid = Pyramid(height=3, base=4)
 pyramid3d = pyramid.square()
-print(pyramid3d)
+print("Площадь поверхности пирамиди =", pyramid3d)
