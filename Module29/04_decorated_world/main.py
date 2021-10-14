@@ -20,8 +20,11 @@ def decorated_decorator(function: Callable, *args, **kwargs):
 
 
 @decorated_decorator(100, 'рублей', 200, 'друзей')
+# TODO нейминг параметров
 def decorated_function(text: str, num: int) -> None:
     print("Привет", text, num)
 
 
 decorated_function(text="Юзер", num=101)
+
+# TODO применить рекомендации данные ранее

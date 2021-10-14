@@ -7,7 +7,7 @@ def singleton(cls):
         if wrapper.wrapper_obj == 0:
             wrapper.wrapper_obj = cls(*args, **kwargs)
         return wrapper.wrapper_obj
-
+    # TODO почему 0, сделать его None
     wrapper.wrapper_obj = 0
     return wrapper
 
@@ -24,3 +24,6 @@ print(id(my_obj))
 print(id(my_another_obj))
 
 print(my_obj is my_another_obj)
+
+
+# TODO применить рекомендации данные ранее

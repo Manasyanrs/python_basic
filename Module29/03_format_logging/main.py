@@ -21,7 +21,8 @@ def log_method(time_format: str, cls_name: str) -> Callable:
             print("- Запускается {}.{}. Дата и время запуска: {}".format(
                 cls_name, func.__name__, total_result))
 
-            # TODO тут у меня прорблема с выводом метода
+            # тут у меня прорблема с выводом метода
+            # TODO распишите более подробно проблему
             print("Тут метод", end=" ")
             start = time.time()
             result = func(*args, **kwargs)
@@ -34,7 +35,15 @@ def log_method(time_format: str, cls_name: str) -> Callable:
         return wrapper
     return decorator
 
-
+# TODO получается вызывая log_methods у класса он будет принимать формат даты и времени
+# TODO wrapped принимет класс ,
+# TODO мы получаем все методы этого класса и итерируемся по ним, отбрасывая мейджик __ методы
+# TODO далее получив нужный класс у этого метода мы првоеяем его что он может быть вызван если у него есть метод
+#  __call__
+# TODO далее мы инициализируем наш декоратор методов передав в него еime_format: формат даты и времени
+# TODO имя класса полученного из __name__ + .
+# TODO и в одной строке передав метод класса который получили ранее во второй декоратор на ход второй функции
+# TODO через setattr устанавливаем кслассу с методом значение с декораторм которое получили ранее
 def log_methods(time_format: str) -> Callable:
     """ Декоратор. Применяет декоратор log_method ко всем методам класса. """
 
@@ -66,7 +75,8 @@ class B(A):
         super().test_sum_1()
         print("Наследник test sum 1")
 
-    # TODO если test_sum_2 менять на @classmethod или @staticmethod то получаю ошыбку
+    # если test_sum_2 менять на @classmethod или @staticmethod то получаю ошыбку
+    # эти дикораторы тут не нужны
     def test_sum_2(self):
         print("test sum 2")
         number = 200
@@ -80,3 +90,5 @@ class B(A):
 my_obj = B()
 my_obj.test_sum_1()
 my_obj.test_sum_2()
+
+# TODO поправить нейминг переменных

@@ -33,3 +33,6 @@ def add_comment():
 
 delete_site()
 add_comment()
+
+# TODO во всех декораторах используем wraps
+# TODO пишем докстринги к каждому методу или функции
