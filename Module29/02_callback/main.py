@@ -1,11 +1,20 @@
 from typing import Callable
+import functools
 
 
-# TODO app объявляем заранее
+app = {}
+
 
 def callback(arg: str) -> Callable:
+    """Декаратор функци на вход получает арумент и заполняет пустой словарь
+    по ключу arg, а значение получет функцией которую мы декорировали
+    :argument
+        arg: str (Передается названые аргумента)"""
+
     def decorator(function: Callable) -> Callable:
-        # TODO вот тут нужно заполнить словарь по ключу arg функцией которую мы декорировали
+        app[arg] = function
+
+        @functools.wraps(function)
         def wrapper(*args, **kwargs):
             result = function(*args, **kwargs)
             return result
@@ -15,11 +24,12 @@ def callback(arg: str) -> Callable:
 
 @callback('//')
 def example():
+    """Функция выводит на экран сообщение 'Пример функции, которая возвращает ответ сервера'
+        :return: srt """
+
     print('Пример функции, которая возвращает ответ сервера')
     return 'OK'
 
-
-app = {"//": example}
 
 route = app.get('//')
 if route:
@@ -27,5 +37,3 @@ if route:
     print('Ответ:', response)
 else:
     print('Такого пути нет')
-
-# TODO применить рекомендации данные ранее

@@ -21,10 +21,8 @@ def log_method(time_format: str, cls_name: str) -> Callable:
             print("- Запускается {}.{}. Дата и время запуска: {}".format(
                 cls_name, func.__name__, total_result))
 
-            # тут у меня прорблема с выводом метода
-            # TODO распишите более подробно проблему
-            print("Тут метод", end=" ")
             start = time.time()
+            print("Тут метод")
             result = func(*args, **kwargs)
 
             end = time.time() - start
@@ -35,18 +33,9 @@ def log_method(time_format: str, cls_name: str) -> Callable:
         return wrapper
     return decorator
 
-# TODO получается вызывая log_methods у класса он будет принимать формат даты и времени
-# TODO wrapped принимет класс ,
-# TODO мы получаем все методы этого класса и итерируемся по ним, отбрасывая мейджик __ методы
-# TODO далее получив нужный класс у этого метода мы првоеяем его что он может быть вызван если у него есть метод
-#  __call__
-# TODO далее мы инициализируем наш декоратор методов передав в него еime_format: формат даты и времени
-# TODO имя класса полученного из __name__ + .
-# TODO и в одной строке передав метод класса который получили ранее во второй декоратор на ход второй функции
-# TODO через setattr устанавливаем кслассу с методом значение с декораторм которое получили ранее
+
 def log_methods(time_format: str) -> Callable:
     """ Декоратор. Применяет декоратор log_method ко всем методам класса. """
-
     def wrapped(cls):
         for i_method in dir(cls):
             if i_method.startswith('__') is False:
@@ -58,7 +47,7 @@ def log_methods(time_format: str) -> Callable:
 
 
 @log_methods("b d Y - H:M:S")
-class A:
+class Alfa:
     def test_sum_1(self) -> int:
         print('test sum 1')
         number = 100
@@ -70,13 +59,11 @@ class A:
 
 
 @log_methods("b d Y - H:M:S")
-class B(A):
+class Betta(Alfa):
     def test_sum_1(self):
         super().test_sum_1()
         print("Наследник test sum 1")
 
-    # если test_sum_2 менять на @classmethod или @staticmethod то получаю ошыбку
-    # эти дикораторы тут не нужны
     def test_sum_2(self):
         print("test sum 2")
         number = 200
@@ -87,8 +74,20 @@ class B(A):
         return result
 
 
-my_obj = B()
-my_obj.test_sum_1()
-my_obj.test_sum_2()
+test = Betta()
+test.test_sum_1()
+test.test_sum_2()
 
-# TODO поправить нейминг переменных
+# TODO по примеру так
+
+#  - Запускается 'B.test_sum_1'. Дата и время запуска: Apr 23 2021 - 21:50:37
+#  - Запускается 'A.test_sum_1'. Дата и время запуска: Apr 23 2021 - 21:50:37
+#  Тут метод test_sum_1"""
+# TODO а у меня выходит
+#  - Запускается B.test_sum_1. Дата и время запуска: Oct 18 2021 - 17:20:22
+# Тут метод
+# - Запускается A.test_sum_1. Дата и время запуска: Oct 18 2021 - 17:20:22
+# Тут метод
+# test sum 1
+
+# TODO по другому у меня никак не получается решить данную зодачу
