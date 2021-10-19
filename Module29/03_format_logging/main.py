@@ -45,10 +45,12 @@ def log_methods(time_format: str) -> Callable:
         return cls
     return wrapped
 
+# TODO правим нейминг
 
 @log_methods("b d Y - H:M:S")
 class Alfa:
     def test_sum_1(self) -> int:
+        # TODO принт тут метод test sum 1 должен быть тут не в декораторе
         print('test sum 1')
         number = 100
         result = 0
@@ -78,16 +80,16 @@ test = Betta()
 test.test_sum_1()
 test.test_sum_2()
 
-# TODO по примеру так
+#  по примеру так
 
 #  - Запускается 'B.test_sum_1'. Дата и время запуска: Apr 23 2021 - 21:50:37
 #  - Запускается 'A.test_sum_1'. Дата и время запуска: Apr 23 2021 - 21:50:37
 #  Тут метод test_sum_1"""
-# TODO а у меня выходит
+#  а у меня выходит
 #  - Запускается B.test_sum_1. Дата и время запуска: Oct 18 2021 - 17:20:22
 # Тут метод
 # - Запускается A.test_sum_1. Дата и время запуска: Oct 18 2021 - 17:20:22
 # Тут метод
 # test sum 1
 
-# TODO по другому у меня никак не получается решить данную зодачу
+#  по другому у меня никак не получается решить данную зодачу
