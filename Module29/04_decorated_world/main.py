@@ -35,3 +35,5 @@ def decorated_function(text: str, number: int) -> None:
 
 
 decorated_function("Юзер", 101)
+
+# зачет!

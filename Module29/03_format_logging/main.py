@@ -75,3 +75,5 @@ class Betta(Alfa):
 test = Betta()
 test.test_sum_1()
 test.test_sum_2()
+
+# зачет!
