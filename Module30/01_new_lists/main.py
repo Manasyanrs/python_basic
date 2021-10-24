@@ -14,3 +14,5 @@ print("\nИмена из списка names в которых есть хотя 
 
 new_numbers: List[int] = sum(map(lambda digit: digit, numbers))
 print("\nПроизведение всех чисел из списка numbers = {}".format(new_numbers))
+
+# зачет!

@@ -15,3 +15,5 @@ def can_be_poly(word: str) -> bool:
 
 print(can_be_poly('ababc'))
 print(can_be_poly('abbbc'))
+
+# зачет!
