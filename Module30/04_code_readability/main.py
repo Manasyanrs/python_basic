@@ -11,10 +11,7 @@ prime_numbers_1 = [unique_element for unique_element, repeatable_element in Coun
                    if repeatable_element == 1]
 print(prime_numbers_1)
 
-# TODO по дз потребовался
-# TODO 1. “однострочным” кодом, без объявления дополнительных функций;
-# TODO 2. обычным, “своим” кодом, который покажется вам наиболее красивым.
-# TODO такой вариант по мне еще лучше и понятнее
+
 prime_numbers_2: list = []
 temporary_variable: int = 0
 
@@ -30,3 +27,5 @@ for digit in range(1000):
             temporary_variable = 0
 
 print(prime_numbers_2)
+
+# зачет!
