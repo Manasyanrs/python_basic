@@ -6,3 +6,5 @@ car = re.findall(r"\b[АВЕКМНОРСТУХ]\d{2,3}\w+\d{2,3}", registration_
 taxi = re.findall(r"\b[АВЕКМНОРСТУХ]{2}\d{2,3}\w+\d{2,3}", registration_numbers)
 print("Список номеров частных автомобилей: {}".format(car))
 print("Список номеров такси: {}".format(taxi))
+
+# зачет!

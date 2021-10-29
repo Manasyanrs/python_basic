@@ -24,3 +24,5 @@ with open("my_json.json", "r") as text:
     total_result = json.load(text)
 
 print(total_result)
+
+# зачет!

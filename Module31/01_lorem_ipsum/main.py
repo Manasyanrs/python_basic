@@ -9,3 +9,5 @@ Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v
 
 result = re.findall(r"\b[a-zA-Z]{4}\b", text)
 print(result)
+
+# зачет!

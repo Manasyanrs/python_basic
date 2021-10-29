@@ -8,3 +8,5 @@ for index, number in enumerate(phone_numbers):
         print("{} номер: всё в порядке".format(index + 1))
     else:
         print("{} номер: не подходит".format(index + 1))
+
+# зачет!
