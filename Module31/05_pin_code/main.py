@@ -1,7 +1,6 @@
 import itertools
 
 
-# TODO используем атрибут repeat=4
-# TODO range(10) выносим в переменную
-for code in itertools.product(range(10), range(10), range(10), range(10)):
+position_number = list(range(10))
+for code in itertools.product(position_number, repeat=4):
     print(code)
