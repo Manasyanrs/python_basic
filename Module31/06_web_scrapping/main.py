@@ -6,3 +6,5 @@ text = url.text
 
 result = re.findall(r">(.+)</h3>", text)
 print(result)
+
+# зачет!
